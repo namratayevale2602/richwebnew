@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  font-family: "Montserrat", sans-serif;
+
+  --skyBlue: #2274e0;
+
+  --bg-primary: #0a0f1c;
+  --bg-secondary: #0f172a;
+  --bg-card: #1a1f2e;
+  --bg-accent: #172554;
+
+  --text-primary: #eaf2ff;
+  --text-secondary: #b8c7e0;
+
+  --brand-primary: #0bc0df;
+  --brand-secondary: #127cc9;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+
+  /* background: linear-gradient(-45deg, #0a0f1c, #1a1f2e, #0f172a, #172554); */
+  background: url(./assets/bg/bg1.mp4);
+  /* background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite; */
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.loader-letter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+*,
+::after,
+::before {
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

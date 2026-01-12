@@ -1,0 +1,375 @@
+{
+  "seo": {
+    "label": "SEO Services",
+    "hero": {
+      "title": "Professional SEO Services: Boost Your Search Rankings & Organic Traffic",
+      "description": "We provide comprehensive SEO strategies that improve your website's visibility, drive qualified traffic, and increase conversions. Our data-driven approach ensures sustainable growth in search engine rankings.",
+      "features": [
+        "Comprehensive keyword research and analysis",
+        "On-page and technical SEO optimization",
+        "High-quality backlink building strategy",
+        "Local SEO for geographical targeting",
+        "Regular performance reporting and analytics",
+        "Mobile-first optimization approach"
+      ]
+    },
+    "whatWeDeliver": {
+      "title": "Complete SEO Solutions",
+      "description": "End-to-end SEO services designed to improve your search engine rankings and drive organic growth.",
+      "approach": [
+        "Data-driven keyword strategy",
+        "Technical SEO audit and optimization",
+        "Content optimization for search intent",
+        "Link building and authority enhancement",
+        "Local search optimization",
+        "Continuous monitoring and adjustment"
+      ],
+      "metrics": [
+        { "label": "Keyword Rankings", "value": "90% Improvement" },
+        { "label": "Organic Traffic", "value": "200% Increase" },
+        { "label": "Conversion Rate", "value": "150% Boost" },
+        { "label": "ROI", "value": "5x Average" }
+      ]
+    },
+    "solutions": [
+      {
+        "title": "Technical SEO",
+        "description": "Optimize your website's technical foundation for better crawling and indexing.",
+        "features": [
+          "Website speed optimization",
+          "Mobile responsiveness check",
+          "Schema markup implementation",
+          "XML sitemap creation",
+          "Robots.txt optimization",
+          "SSL certificate setup"
+        ]
+      },
+      {
+        "title": "On-Page SEO",
+        "description": "Optimize individual pages to rank higher and earn more relevant traffic.",
+        "features": [
+          "Keyword optimization",
+          "Meta tags and descriptions",
+          "Content structure optimization",
+          "Image optimization",
+          "Internal linking strategy",
+          "User experience optimization"
+        ]
+      },
+      {
+        "title": "Content SEO",
+        "description": "Create and optimize content that ranks well and engages your audience.",
+        "features": [
+          "Keyword research and analysis",
+          "Content strategy development",
+          "Blog post optimization",
+          "Content gap analysis",
+          "Content promotion strategy",
+          "Performance tracking"
+        ]
+      },
+      {
+        "title": "Local SEO",
+        "description": "Optimize your online presence to attract more customers from local searches.",
+        "features": [
+          "Google Business Profile optimization",
+          "Local citation building",
+          "Review management",
+          "Local keyword targeting",
+          "Map pack optimization",
+          "Local content creation"
+        ]
+      },
+      {
+        "title": "Link Building",
+        "description": "Build high-quality backlinks to improve domain authority and rankings.",
+        "features": [
+          "Guest posting strategy",
+          "Resource link building",
+          "Broken link building",
+          "Skyscraper technique",
+          "Digital PR campaigns",
+          "Link quality monitoring"
+        ]
+      },
+      {
+        "title": "SEO Analytics",
+        "description": "Track, measure, and optimize your SEO performance with detailed analytics.",
+        "features": [
+          "Rank tracking and reporting",
+          "Traffic analysis",
+          "Conversion tracking",
+          "Competitor analysis",
+          "ROI measurement",
+          "Monthly performance reports"
+        ]
+      }
+    ],
+    "strategies": {
+      "title": "SEO Implementation Strategies",
+      "description": "Proven strategies that deliver measurable results in search engine rankings.",
+      "items": [
+        {
+          "title": "Keyword Research & Planning",
+          "description": "Comprehensive keyword analysis to target the right search terms.",
+          "tactics": [
+            "Competitor keyword analysis",
+            "Search volume research",
+            "Keyword difficulty assessment",
+            "Long-tail keyword targeting",
+            "Search intent analysis",
+            "Keyword mapping"
+          ]
+        },
+        {
+          "title": "Content Optimization",
+          "description": "Optimize existing and new content for better search visibility.",
+          "tactics": [
+            "Title tag optimization",
+            "Meta description writing",
+            "Header tag structuring",
+            "Image alt text optimization",
+            "Content quality enhancement",
+            "Readability improvement"
+          ]
+        },
+        {
+          "title": "Technical Optimization",
+          "description": "Improve website technical aspects for better search engine crawling.",
+          "tactics": [
+            "Website speed optimization",
+            "Mobile-first indexing",
+            "Structured data implementation",
+            "Canonical tags setup",
+            "404 error resolution",
+            "Site architecture optimization"
+          ]
+        },
+        {
+          "title": "Link Building Strategy",
+          "description": "Build authoritative backlinks to improve domain authority.",
+          "tactics": [
+            "Guest posting outreach",
+            "Resource page link building",
+            "Broken link building",
+            "Skyscraper content creation",
+            "Digital PR campaigns",
+            "Social media promotion"
+          ]
+        }
+      ]
+    },
+    "process": {
+      "title": "Our SEO Process",
+      "description": "A systematic approach to improving your search engine rankings and organic traffic.",
+      "steps": [
+        {
+          "title": "SEO Audit & Analysis",
+          "description": "Comprehensive analysis of your current SEO performance.",
+          "activities": [
+            "Technical SEO audit",
+            "Keyword gap analysis",
+            "Competitor analysis",
+            "Website performance review",
+            "Backlink profile analysis",
+            "Content audit"
+          ]
+        },
+        {
+          "title": "Strategy Development",
+          "description": "Create a customized SEO strategy based on your business goals.",
+          "activities": [
+            "Keyword strategy development",
+            "Content strategy planning",
+            "Technical optimization plan",
+            "Link building strategy",
+            "Local SEO plan",
+            "Performance benchmarks"
+          ]
+        },
+        {
+          "title": "Implementation",
+          "description": "Execute the SEO strategy with precision and expertise.",
+          "activities": [
+            "Technical SEO implementation",
+            "On-page optimization",
+            "Content creation and optimization",
+            "Link building execution",
+            "Local SEO setup",
+            "Analytics configuration"
+          ]
+        },
+        {
+          "title": "Monitoring & Optimization",
+          "description": "Continuously monitor performance and optimize strategies.",
+          "activities": [
+            "Rank tracking",
+            "Traffic monitoring",
+            "Conversion tracking",
+            "Performance analysis",
+            "Strategy adjustment",
+            "Monthly reporting"
+          ]
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Benefits of Professional SEO",
+      "description": "Investing in professional SEO services delivers significant advantages for your business.",
+      "points": [
+        {
+          "title": "Increased Visibility",
+          "description": "Higher search rankings lead to more visibility and brand exposure."
+        },
+        {
+          "title": "Higher Conversion Rates",
+          "description": "Targeted organic traffic converts better than paid traffic."
+        },
+        {
+          "title": "Better ROI",
+          "description": "SEO delivers long-term results with better return on investment."
+        },
+        {
+          "title": "Brand Authority",
+          "description": "Top rankings build trust and establish your brand as an authority."
+        },
+        {
+          "title": "Targeted Audience",
+          "description": "Reach users actively searching for your products or services."
+        },
+        {
+          "title": "Measurable Results",
+          "description": "Track progress with concrete metrics and analytics."
+        }
+      ]
+    }
+  },
+
+  "social-media-marketing": {
+    "label": "Social Media Marketing",
+    "hero": {
+      "title": "Social Media Marketing Services: Grow Your Brand & Engagement",
+      "description": "We create powerful social media strategies that increase brand awareness, drive engagement, and generate leads across all major platforms.",
+      "features": [
+        "Complete social media strategy development",
+        "Content creation and calendar management",
+        "Community engagement and moderation",
+        "Paid social media advertising",
+        "Performance analytics and reporting",
+        "Influencer marketing campaigns"
+      ]
+    }
+  },
+
+  "ppc-advertising": {
+    "label": "PPC Advertising",
+    "hero": {
+      "title": "PPC Advertising Services: Drive Immediate Results & Qualified Traffic",
+      "description": "We manage high-converting PPC campaigns on Google, Facebook, Instagram, and other platforms to deliver immediate traffic and conversions.",
+      "features": [
+        "Comprehensive PPC strategy development",
+        "Keyword research and bid management",
+        "Ad copy creation and optimization",
+        "Landing page optimization",
+        "Conversion tracking setup",
+        "ROI optimization and reporting"
+      ]
+    }
+  },
+
+  "content-marketing": {
+    "label": "Content Marketing",
+    "hero": {
+      "title": "Content Marketing Services: Attract, Engage & Convert Your Audience",
+      "description": "We create compelling content that attracts your target audience, builds trust, and drives conversions through strategic content planning and distribution.",
+      "features": [
+        "Content strategy and planning",
+        "Blog writing and optimization",
+        "Video content creation",
+        "Infographic design",
+        "Content distribution strategy",
+        "Performance measurement"
+      ]
+    }
+  },
+
+  "email-marketing": {
+    "label": "Email Marketing",
+    "hero": {
+      "title": "Email Marketing Services: Nurture Leads & Drive Sales",
+      "description": "We create targeted email campaigns that nurture leads, retain customers, and drive sales through personalized communication strategies.",
+      "features": [
+        "Email campaign strategy development",
+        "List building and segmentation",
+        "Automated email sequences",
+        "A/B testing and optimization",
+        "Performance analytics",
+        "GDPR compliance"
+      ]
+    }
+  },
+
+  "whatsapp-marketing": {
+    "label": "WhatsApp Marketing",
+    "hero": {
+      "title": "WhatsApp Marketing Services: Direct Engagement & Conversions",
+      "description": "Leverage WhatsApp Business API for personalized marketing campaigns, customer support, and lead nurturing with high engagement rates.",
+      "features": [
+        "WhatsApp Business API setup",
+        "Broadcast campaign management",
+        "Automated chatbot integration",
+        "Customer support automation",
+        "Transactional message setup",
+        "Analytics and reporting"
+      ]
+    }
+  },
+
+  "bulk-sms": {
+    "label": "Bulk SMS Marketing",
+    "hero": {
+      "title": "Bulk SMS Marketing Services: Instant Reach & High Open Rates",
+      "description": "Send targeted SMS campaigns with high open rates for promotional offers, alerts, and customer engagement.",
+      "features": [
+        "SMS campaign strategy development",
+        "List management and segmentation",
+        "Transactional SMS setup",
+        "Promotional SMS campaigns",
+        "Two-way messaging",
+        "Delivery reports"
+      ]
+    }
+  },
+
+  "graphic-design": {
+    "label": "Graphic Design",
+    "hero": {
+      "title": "Graphic Design Services: Visual Identity & Brand Communication",
+      "description": "Create stunning visual designs that communicate your brand message and engage your audience across all channels.",
+      "features": [
+        "Brand identity design",
+        "Logo and visual identity",
+        "Marketing collateral design",
+        "Social media graphics",
+        "Infographic creation",
+        "Print design services"
+      ]
+    }
+  },
+
+  "video-marketing": {
+    "label": "Video Marketing",
+    "hero": {
+      "title": "Video Marketing Services: Engage & Convert with Visual Content",
+      "description": "Create compelling video content that tells your brand story, explains products, and drives engagement across platforms.",
+      "features": [
+        "Video strategy development",
+        "Scriptwriting and storyboarding",
+        "Video production and editing",
+        "Animation and motion graphics",
+        "Video SEO optimization",
+        "Distribution strategy"
+      ]
+    }
+  }
+}
