@@ -51,7 +51,10 @@ const Layout = () => {
       <VideoBackground />
       <ScrollToTop />
       <Navbar />
-      <Outlet />
+      {/* Main content area */}
+      <main className="relative z-10">
+        <Outlet /> {/* This renders the current page component */}
+      </main>
       <Footer />
       <FloatingButtons />
     </div>

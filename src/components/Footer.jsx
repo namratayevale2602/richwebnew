@@ -80,7 +80,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="rounded-tl-4xl bg-gradient-to-b from-[#021b44] to-[#085692] text-white pt-16 pb-8 px-4 md:px-8">
+    <footer className="rounded-tl-4xl bg-[#10182b] text-white pt-16 pb-8 px-4 md:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Clinic Info */}
         <div>
@@ -133,7 +133,7 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-6 text-white border-b border-teal-600 pb-2">
+          <h3 className="text-lg font-semibold mb-6 text-white border-b border-[#b8c7e0] pb-2">
             Quick Links
           </h3>
           <ul className="space-y-3">
@@ -141,7 +141,7 @@ const Footer = () => {
               <li key={index}>
                 <button
                   onClick={() => navigate(link.path)}
-                  className="text-white hover:text-[#0bc0df] transition-colors text-left flex items-center group"
+                  className="text-white transition-colors text-left flex items-center group"
                 >
                   <span className="w-2 h-2 bg-white rounded-full mr-3 group-hover:bg-[#0bc0df] transition-colors"></span>
                   {link.label}
@@ -153,7 +153,7 @@ const Footer = () => {
 
         {/* Services */}
         <div>
-          <h3 className="text-lg font-semibold mb-6 text-white border-b border-teal-600 pb-2">
+          <h3 className="text-lg font-semibold mb-6 text-white border-b border-[#b8c7e0] pb-2">
             Help
           </h3>
           <ul className="space-y-3">
@@ -161,7 +161,7 @@ const Footer = () => {
               <li key={index}>
                 <button
                   onClick={() => navigate(service.path)}
-                  className="text-white hover:text-[#0bc0df] transition-colors text-left flex items-center group"
+                  className="text-white transition-colors text-left flex items-center group"
                 >
                   <span className="w-2 h-2 bg-white rounded-full mr-3 group-hover:bg-[#0bc0df] transition-colors"></span>
                   {service.label}
@@ -173,7 +173,7 @@ const Footer = () => {
 
         {/* Contact Info */}
         <div>
-          <h3 className="text-lg font-semibold mb-6 text-white border-b border-teal-600 pb-2">
+          <h3 className="text-lg font-semibold mb-6 text-white border-b border-[#b8c7e0] pb-2">
             Contact Info
           </h3>
           <ul className="space-y-4 text-white pt-4">
@@ -215,7 +215,7 @@ const Footer = () => {
               <Clock size={20} className="text-white" />
               <div>
                 <p>Mon-Sat: 09:30 AM - 6:30 PM</p>
-                <p className="text-teal-300">Sunday: Closed</p>
+                <p className="text-[#b8c7e0]">Sunday: Closed</p>
               </div>
             </li>
           </ul>
@@ -236,7 +236,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="max-w-7xl mx-auto mt-12 text-center text-sm text-teal-300 border-t border-teal-700 pt-6">
+      <div className="max-w-7xl mx-auto mt-12 text-center text-sm text-[#b8c7e0] border-t border-[#b8c7e0] pt-6">
         <p className="mb-2">
           © {new Date().getFullYear()}{" "}
           <span className="font-semibold text-white">
@@ -252,7 +252,7 @@ const Footer = () => {
           >
             Privacy Policy
           </button>
-          <span className="text-teal-600">•</span>
+          <span className="text-[#b8c7e0]">•</span>
           <button
             onClick={() => navigate("/terms-and-service")}
             className="hover:text-amber-400 transition-colors"

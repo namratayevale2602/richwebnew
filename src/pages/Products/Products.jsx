@@ -34,8 +34,8 @@ const Products = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white pt-40">
-      <Breadcrumb page="Products" subpage={subpage} />
+    <div className="min-h-screen bg-tranparent pt-40">
+      {/* <Breadcrumb page="Products" subpage={subpage} /> */}
       {/* Service Intro Section - Only show if we have a specific product */}
       {subpage.details && <ServiceIntro subpage={subpage} />}
       {subpage.details && <Digital subpage={subpage} />}

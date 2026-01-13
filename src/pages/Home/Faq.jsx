@@ -371,7 +371,7 @@ const Faq = ({ subpage = 0 }) => {
 const FaqItem = ({ question, answer, isOpen, onToggle, index, brandColor }) => {
   return (
     <motion.div
-      className="bg-[#182232] rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300"
+      className="bg-white/12 rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300"
       whileHover={{ y: -2 }}
     >
       <motion.button
@@ -406,7 +406,7 @@ const FaqItem = ({ question, answer, isOpen, onToggle, index, brandColor }) => {
         >
           <svg
             className={`w-5 h-5 transition-colors duration-300 ${
-              isOpen ? "text-gray-900" : "text-gray-400"
+              isOpen ? "text-gray-400" : "text-gray-400"
             }`}
             fill="none"
             stroke="currentColor"

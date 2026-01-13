@@ -95,7 +95,7 @@ const Testimonials = () => {
 
         {/* Rest of the Testimonials Card remains the same */}
         <motion.div
-          className="bg-[#182232] rounded-2xl shadow-lg overflow-hidden"
+          className="bg-white/12 rounded-2xl shadow-lg overflow-hidden"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}

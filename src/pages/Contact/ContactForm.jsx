@@ -65,13 +65,13 @@ const ContactForm = () => {
         {/* Name and Company Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-[#e5edfc] mb-2">
               Full Name *
             </label>
             <input
               type="text"
               placeholder="Full Name"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-4 py-3 text-[#e5edfc] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               {...register("fullname", { required: true })}
             />
             {errors.fullname && (
@@ -82,13 +82,13 @@ const ContactForm = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-[#e5edfc] mb-2">
               Company Name *
             </label>
             <input
               type="text"
               placeholder="Company Name"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-4 py-3 text-[#e5edfc] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               {...register("company", { required: true })}
             />
             {errors.company && (
@@ -102,13 +102,13 @@ const ContactForm = () => {
         {/* Email and Phone Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-[#e5edfc] mb-2">
               Business Email *
             </label>
             <input
               type="email"
               placeholder="Business Email"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-4 py-3 text-[#e5edfc] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               {...register("email", {
                 required: true,
                 pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
@@ -122,13 +122,13 @@ const ContactForm = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-[#e5edfc] mb-2">
               Contact Number *
             </label>
             <input
               type="tel"
               placeholder="10 Digit Mobile Number"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-4 py-3 text-[#e5edfc] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               {...register("mobile", {
                 required: true,
                 pattern: /^[7-9]\d{9}$/i,
@@ -146,25 +146,25 @@ const ContactForm = () => {
         {/* Country and City Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-[#e5edfc] mb-2">
               Country
             </label>
             <input
               type="text"
               placeholder="Country"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-4 py-3 text-[#e5edfc] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               {...register("country")}
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-[#e5edfc] mb-2">
               City
             </label>
             <input
               type="text"
               placeholder="City"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-4 py-3 text-[#e5edfc] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               {...register("city")}
             />
           </div>
@@ -172,11 +172,11 @@ const ContactForm = () => {
 
         {/* Product Selection */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-[#e5edfc] mb-2">
             Products
           </label>
           <select
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-4 py-3 border text-[#e5edfc] border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             defaultValue="default"
             {...register("product")}
           >
@@ -191,13 +191,13 @@ const ContactForm = () => {
 
         {/* Message */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-[#e5edfc] mb-2">
             Message
           </label>
           <textarea
             placeholder="Message Here"
             rows="4"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-4 py-3 text-[#e5edfc] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             {...register("message")}
           ></textarea>
         </div>
@@ -210,7 +210,7 @@ const ContactForm = () => {
             className="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
             {...register("agreement")}
           />
-          <span className="text-sm text-gray-600">
+          <span className="text-sm text-[#e5edfc]">
             By clicking this, you agree to disclose your personal information to
             Rich System Solution for contacting you via mail or text for further
             assistance.

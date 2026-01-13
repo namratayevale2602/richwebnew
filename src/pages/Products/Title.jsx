@@ -55,16 +55,16 @@ const Title = ({
         </div>
       ) : (
         <div>
-          <h2 className="font-semibold text-4xl text-center mt-10">
+          <h2 className="font-semibold text-[#b8c7e0] text-4xl text-center mt-10">
             How {service ? service : "Your Service"} Can Drive Your Business
             Growth
           </h2>
-          <p className="text-justify sm:text-center mt-3">
+          <p className="text-justify text-[#0bc0df] sm:text-center mt-3">
             At {service ? service : "Your Service"}, we provide tailored
             solutions to help businesses grow. Our services are designed to
             deliver maximum impact for each client.
           </p>
-          <p className="text-justify sm:text-center mb-10">
+          <p className="text-justify text-[#0bc0df] sm:text-center mb-10">
             We proudly serve industries including:
           </p>
         </div>

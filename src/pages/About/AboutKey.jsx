@@ -56,7 +56,7 @@ const AboutKey = () => {
     <div className="min-h-screen">
       {/* Introduction Section */}
       {introduction && (
-        <section className="py-12 lg:py-20 bg-white">
+        <section className="py-12 lg:py-20 bg-transparent">
           <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
             <div className="text-center mb-12 fade-in opacity-0 translate-y-4 transition-all duration-500">
               <h1 className="text-blue-900 text-5xl lg:text-6xl font-bold mb-4">
@@ -84,17 +84,17 @@ const AboutKey = () => {
 
       {/* About Section */}
       {about && (
-        <section className="py-12 lg:py-20 bg-white">
+        <section className="py-12 lg:py-20 bg-transparent">
           <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
               <div className="w-full lg:w-1/2 fade-in opacity-0 translate-y-4 transition-all duration-500">
-                <h2 className="text-blue-900 text-4xl lg:text-6xl font-semibold mb-3">
+                <h2 className="text-[#e5edfc] text-4xl lg:text-6xl font-semibold mb-3">
                   {about.title}
                 </h2>
-                <h3 className="text-xl lg:text-2xl text-slate-600 mb-4">
+                <h3 className="text-xl lg:text-2xl text-[#0bc0df] mb-4">
                   {about.subtitle}
                 </h3>
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <p className="text-[#e5edfc] text-lg leading-relaxed">
                   {about.description}
                 </p>
               </div>
@@ -114,14 +114,14 @@ const AboutKey = () => {
 
       {/* Vision Section */}
       {vision && (
-        <section className="py-12 lg:py-20 bg-white">
+        <section className="py-12 lg:py-20 bg-transparent">
           <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
             <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12">
               <div className="w-full lg:w-1/2 fade-in opacity-0 translate-y-4 transition-all duration-500">
-                <h2 className="text-blue-900 text-4xl lg:text-6xl font-semibold mb-3 text-center">
+                <h2 className="text-[#e5edfc] text-4xl lg:text-6xl font-semibold mb-3 text-center">
                   {vision.title}
                 </h2>
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <p className="text-[#e5edfc] text-lg leading-relaxed">
                   {vision.description}
                 </p>
               </div>
@@ -141,14 +141,14 @@ const AboutKey = () => {
 
       {/* Mission Section */}
       {mission && (
-        <section className="py-12 lg:py-20 bg-white">
+        <section className="py-12 lg:py-20 bg-transparent">
           <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
               <div className="w-full lg:w-1/2 fade-in opacity-0 translate-y-4 transition-all duration-500">
-                <h2 className="text-blue-900 text-4xl lg:text-6xl font-semibold mb-3">
+                <h2 className="text-[#e5edfc] text-4xl lg:text-6xl font-semibold mb-3">
                   {mission.title}
                 </h2>
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <p className="text-[#e5edfc] text-lg leading-relaxed">
                   {mission.description}
                 </p>
               </div>
@@ -168,17 +168,17 @@ const AboutKey = () => {
 
       {/* What We Do Section */}
       {offer && (
-        <section className="py-12 lg:py-20 bg-white">
+        <section className="py-12 lg:py-20 bg-transparent">
           <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
             <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12">
               <div className="w-full lg:w-1/2 fade-in opacity-0 translate-y-4 transition-all duration-500">
-                <h2 className="text-blue-900 text-4xl lg:text-6xl font-semibold mb-3">
+                <h2 className="text-[#e5edfc] text-4xl lg:text-6xl font-semibold mb-3">
                   {offer.title}
                 </h2>
-                <h3 className="text-xl lg:text-2xl text-slate-600 mb-4">
+                <h3 className="text-xl lg:text-2xl text-[#0bc0df] mb-4">
                   {offer.subtitle}
                 </h3>
-                <p className="text-gray-700 text-lg leading-relaxed">
+                <p className="text-[#e5edfc] text-lg leading-relaxed">
                   {offer.description}
                 </p>
               </div>

@@ -261,7 +261,7 @@ const ProductFAQ = ({ subpage = 0 }) => {
           viewport={{ once: true }}
         >
           <motion.h2
-            className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl mb-4"
+            className="text-3xl font-bold leading-tight text-[#e5edfc] sm:text-4xl lg:text-5xl mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -269,7 +269,7 @@ const ProductFAQ = ({ subpage = 0 }) => {
             {faqData.sectionTitle}
           </motion.h2>
           <motion.p
-            className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600"
+            className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-[#0bc0df]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -306,18 +306,17 @@ const ProductFAQ = ({ subpage = 0 }) => {
 // FAQ Item Component with proper accordion
 const FaqItem = ({ question, answer, isOpen, onToggle, index }) => {
   return (
-    <div className="bg-slate-50 shadow-md rounded-lg overflow-hidden">
+    <div className="bg-white/12 shadow-md rounded-lg overflow-hidden">
       <motion.button
-        className="w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer hover:bg-slate-100 transition-colors duration-200"
+        className="w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer transition-colors duration-200"
         onClick={onToggle}
-        whileHover={{ backgroundColor: "rgba(248, 250, 252, 1)" }}
         transition={{ duration: 0.2 }}
       >
-        <span className="text-lg font-medium text-gray-900 pr-4">
+        <span className="text-lg font-medium text-[#b8c7e0] pr-4">
           {question}
         </span>
         <motion.svg
-          className={`w-5 h-5 text-gray-500 transform transition-transform duration-200 ${
+          className={`w-5 h-5 text-[#b8c7e0] transform transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
           fill="none"
@@ -345,7 +344,7 @@ const FaqItem = ({ question, answer, isOpen, onToggle, index }) => {
             className="overflow-hidden"
           >
             <div className="px-6 pb-4 pt-2">
-              <p className="text-gray-600 leading-relaxed">{answer}</p>
+              <p className="text-[#b8c7e0] leading-relaxed">{answer}</p>
             </div>
           </motion.div>
         )}

@@ -169,9 +169,9 @@ const SoftDevList = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-blue-50">
+    <div className="min-h-screen bg-transparent">
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-[#0cc0e1] via-[#83bfdf] to-[#137bca]">
+      <section className="relative overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -179,10 +179,10 @@ const SoftDevList = () => {
             transition={{ duration: 0.5 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#b8c7e0] mb-6 leading-tight">
               Professional Software & IT Solutions
             </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-[#0bc0df] mb-8 leading-relaxed">
               Comprehensive software development, web solutions, mobile apps,
               and IT services designed to transform your business with
               cutting-edge technology.
@@ -196,11 +196,11 @@ const SoftDevList = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: idx * 0.1 }}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-4"
+                  className="bg-white/12 rounded-xl p-4"
                 >
-                  <div className="flex items-center justify-center gap-2 mb-2">
+                  <div className="flex text-[#e5edfc] items-center justify-center gap-2 mb-2">
                     {stat.icon}
-                    <div className="text-2xl md:text-3xl font-bold text-white">
+                    <div className="text-2xl md:text-3xl font-bold text-[#e5edfc]">
                       {stat.value}
                     </div>
                   </div>
@@ -213,7 +213,7 @@ const SoftDevList = () => {
       </section>
 
       {/* Search and Filters */}
-      <section className="py-8 bg-white border-b border-gray-100">
+      <section className="py-8 bg-white/12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
             {/* Search Bar */}
@@ -224,16 +224,10 @@ const SoftDevList = () => {
                   placeholder="Search software services..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full md:w-96 px-4 py-3 pl-12 rounded-xl border border-gray-200 focus:border-[#127cc9] focus:ring-2 focus:ring-blue-200 transition-all"
+                  className="w-full md:w-96 px-4 py-3 pl-12 text-[#e5edfc] rounded-xl border border-gray-200 focus:border-[#127cc9] focus:ring-2 focus:ring-blue-200 transition-all"
                 />
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
               </div>
-            </div>
-
-            {/* Results Count */}
-            <div className="text-gray-600 font-medium">
-              {filteredServices.length}{" "}
-              {filteredServices.length === 1 ? "service" : "services"} found
             </div>
           </div>
 
@@ -246,7 +240,7 @@ const SoftDevList = () => {
                 className={`px-4 py-2 rounded-lg font-medium transition-all flex items-center gap-2 ${
                   activeFilter === type.id
                     ? "bg-[#127cc9] text-white"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    : "bg-white/12 text-[#e5edfc]"
                 }`}
               >
                 {type.icon}
@@ -273,7 +267,7 @@ const SoftDevList = () => {
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     whileHover={{ y: -8, scale: 1.02 }}
                     onClick={() => navigate(`/${service.slug}`)}
-                    className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+                    className="bg-white/12 rounded-2xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer group"
                   >
                     {/* Service Image */}
                     <div className="relative h-48 overflow-hidden">
@@ -289,10 +283,10 @@ const SoftDevList = () => {
 
                     {/* Service Content */}
                     <div className="p-6">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-[#127cc9] transition-colors">
+                      <h3 className="text-2xl font-bold text-[#b8c7e0] mb-3 group-hover:text-[#127cc9] transition-colors">
                         {service.label}
                       </h3>
-                      <p className="text-gray-600 mb-4 line-clamp-2">
+                      <p className="text-[#e5edfc] mb-4 line-clamp-2">
                         {service.hero.description}
                       </p>
 
@@ -303,24 +297,11 @@ const SoftDevList = () => {
                           .map((feature, idx) => (
                             <div key={idx} className="flex items-start gap-2">
                               <div className="w-2 h-2 rounded-full bg-[#127cc9] mt-2 flex-shrink-0"></div>
-                              <span className="text-gray-700 text-sm line-clamp-2">
+                              <span className="text-[#0bc0df] text-sm line-clamp-2">
                                 {feature}
                               </span>
                             </div>
                           ))}
-                      </div>
-
-                      {/* Stats Row */}
-                      <div className="grid grid-cols-3 gap-2 mb-6">
-                        <div className="text-center p-2 rounded-lg bg-gray-50">
-                          <div className="text-xs text-gray-600">Custom</div>
-                        </div>
-                        <div className="text-center p-2 rounded-lg bg-gray-50">
-                          <div className="text-xs text-gray-600">Fast</div>
-                        </div>
-                        <div className="text-center p-2 rounded-lg bg-gray-50">
-                          <div className="text-xs text-gray-600">Secure</div>
-                        </div>
                       </div>
 
                       {/* CTA Button */}
@@ -361,9 +342,9 @@ const SoftDevList = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#b8c7e0] text-center mb-12">
             Why Choose Our Software Services?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -398,15 +379,15 @@ const SoftDevList = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-all duration-300"
+                className="bg-white/12 p-8 rounded-2xl shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-all duration-300"
               >
                 <div className="inline-flex p-3 rounded-xl bg-[#127cc9] text-white mb-4 group-hover:scale-110 transition-transform">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-xl font-bold text-[#e5edfc] mb-3">
                   {item.title}
                 </h3>
-                <p className="text-gray-600">{item.description}</p>
+                <p className="text-[#e5edfc]">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -414,16 +395,16 @@ const SoftDevList = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-[#0cc0e1] via-[#83bfdf] to-[#137bca]">
+      <section className="py-16 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-4xl font-bold text-white mb-6"
+            className="text-3xl md:text-4xl font-bold text-[#b8c7e0] mb-6"
           >
             Need Custom Software Solutions?
           </motion.h2>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-[#0bc0df] mb-8 max-w-3xl mx-auto">
             Can't find exactly what you need? Our team specializes in creating
             custom software solutions tailored to your specific business
             requirements.
@@ -433,7 +414,7 @@ const SoftDevList = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => navigate("/contact")}
-              className="bg-white text-[#07337a] px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-colors shadow-lg hover:shadow-xl"
+              className="bg-white/12 text-[#b8c7e0] px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-xl"
             >
               Request Custom Solution
             </motion.button>

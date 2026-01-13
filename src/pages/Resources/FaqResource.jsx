@@ -128,7 +128,7 @@ const FaqResource = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 py-12">
+      <div className="min-h-screen bg-gray-50">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="animate-pulse h-10 bg-gray-300 rounded w-96 mx-auto mb-10"></div>
           <div className="flex flex-col lg:flex-row gap-8">
@@ -160,12 +160,12 @@ const FaqResource = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen py-12">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           {/* FAQ Questions Section */}
           <div className="w-full lg:w-3/5">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#b8c7e0] mb-10">
               Frequently Asked Questions
             </h2>
 
@@ -175,13 +175,13 @@ const FaqResource = () => {
                 .map((que, i) => (
                   <div
                     key={que.id || i}
-                    className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden"
+                    className="bg-white/12 rounded-lg shadow-md border border-gray-200 overflow-hidden"
                   >
                     <button
-                      className="w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+                      className="w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer duration-200"
                       onClick={() => toggleItem(i)}
                     >
-                      <span className="text-lg font-medium text-gray-900 pr-4">
+                      <span className="text-lg font-medium text-[#e5edfc] pr-4">
                         {que.question}
                       </span>
                       <svg
@@ -203,7 +203,7 @@ const FaqResource = () => {
 
                     {openItems[i] && (
                       <div className="px-6 pb-4">
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-[#e5edfc] leading-relaxed">
                           {que.answer}
                         </p>
                       </div>
@@ -224,8 +224,8 @@ const FaqResource = () => {
 
           {/* Related FAQ Categories */}
           <div className="w-full lg:w-2/5">
-            <div className="bg-white rounded-lg shadow-md p-6 sticky top-8">
-              <h2 className="text-2xl font-bold text-center text-gray-900 mb-6">
+            <div className="bg-white/12 rounded-lg shadow-md p-6 sticky top-8">
+              <h2 className="text-2xl font-bold text-center text-[#b8c7e0] mb-6">
                 Related FAQ
               </h2>
 

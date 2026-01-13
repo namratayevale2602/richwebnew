@@ -114,12 +114,12 @@ const ContactPage = () => {
   }
 
   return (
-    <div className="w-full min-h-screen bg-white">
+    <div className="w-full min-h-screen ">
       {/* Header Section */}
-      <div className="w-full h-48 bg-blue-900">
+      <div className="w-full h-48">
         <div className="h-full w-full flex flex-col items-center justify-center py-10">
-          <h2 className="text-white text-4xl mb-5 font-bold">Contact Us</h2>
-          <p className="text-white mb-2 text-lg">
+          <h2 className="text-[#b8c7e0] text-4xl mb-5 font-bold">Contact Us</h2>
+          <p className="text-[#e5edfc] mb-2 text-lg">
             We love questions and feedback - and we're always happy to help!
           </p>
           <p className="text-white mb-2 text-lg">
@@ -128,18 +128,18 @@ const ContactPage = () => {
         </div>
       </div>
 
-      <Breadcrumb page="contact" />
+      {/* <Breadcrumb page="contact" /> */}
 
       {/* Main Content */}
-      <div className="py-20 bg-gray-50">
+      <div className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
             {/* Left Side - Company Info */}
             <div className="w-full lg:w-1/2">
-              <h1 className="text-4xl font-bold text-gray-900 mb-6">
+              <h1 className="text-4xl font-bold text-[#b8c7e0] mb-6">
                 Rich System Solution Pvt.Ltd
               </h1>
-              <p className="text-gray-600 text-lg mb-8">
+              <p className="text-[#e5edfc] text-lg mb-8">
                 {contactData[0]?.address}
               </p>
 
@@ -175,33 +175,33 @@ const ContactPage = () => {
 
               {/* Working Hours and Support */}
               <div className="flex flex-col lg:flex-row justify-between gap-8">
-                <div className="flex-1">
-                  <h2 className="text-xl font-bold my-3 text-gray-900">
+                <div className="flex-1 p-5 border border-[#e5edfc] rounded-2xl">
+                  <h2 className="text-xl font-bold text-[#e5edfc]">
                     Working Hours
                   </h2>
                   <ul className="space-y-3">
-                    <li className="flex flex-row items-center text-gray-700">
-                      <AiOutlineCalendar className="me-3 text-black" />
+                    <li className="flex flex-row items-center text-[#e5edfc]">
+                      <AiOutlineCalendar className="me-3 text-[#e5edfc]" />
                       Monday - Saturday
                     </li>
-                    <li className="flex flex-row items-center text-gray-700">
-                      <AiOutlineClockCircle className="me-3 text-black" />
+                    <li className="flex flex-row items-center text-[#e5edfc]">
+                      <AiOutlineClockCircle className="me-3 text-[#e5edfc]" />
                       9:30am - 6:30pm
                     </li>
                   </ul>
                 </div>
 
-                <div className="flex-1">
-                  <h2 className="text-xl font-bold my-3 text-gray-900">
+                <div className="flex-1 p-5 border border-[#e5edfc] rounded-2xl">
+                  <h2 className="text-xl font-bold text-[#e5edfc]">
                     For Support Assistance
                   </h2>
                   <ul className="space-y-3">
                     {contactData[0]?.support_enquiry?.map((sales, index) => (
                       <li
-                        className="flex flex-row items-center text-gray-700"
+                        className="flex flex-row items-center text-[#e5edfc]"
                         key={index}
                       >
-                        <MdOutlineSupportAgent className="me-3 text-black" />
+                        <MdOutlineSupportAgent className="me-3 text-[#e5edfc]" />
                         +91 {sales.support_enquiry}
                       </li>
                     ))}
@@ -226,9 +226,9 @@ const ContactPage = () => {
             </div>
 
             {/* Right Side - Contact Form */}
-            <div className="w-full lg:w-1/2">
-              <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h2 className="font-bold text-2xl mb-8 text-gray-900 capitalize">
+            <div className="w-full lg:w-1/2 border border-[#e5edfc] rounded-2xl">
+              <div className=" rounded-2xl shadow-xl p-8">
+                <h2 className="font-bold text-2xl mb-8 text-[#b8c7e0] capitalize">
                   Send us a message
                 </h2>
                 <ContactForm />

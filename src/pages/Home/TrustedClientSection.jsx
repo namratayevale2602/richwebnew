@@ -170,7 +170,7 @@ const TrustedClientSection = () => {
               (logo, index) => (
                 <motion.div
                   key={index}
-                  className="flex-shrink-0 w-28 h-12 sm:w-40 sm:h-16 bg-white rounded-lg sm:rounded-xl p-2 sm:p-4 shadow-md border border-gray-100 flex items-center justify-center"
+                  className="flex-shrink-0 w-28 h-12 sm:w-40 sm:h-16 rounded-lg sm:rounded-xl p-2 sm:p-4 shadow-md border border-gray-100 flex items-center justify-center"
                   whileHover={{
                     scale: 1.05,
                     y: -3,

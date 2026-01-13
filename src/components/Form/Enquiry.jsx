@@ -46,7 +46,7 @@ const Enquiry = () => {
   };
 
   return (
-    <div className="bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-transparent py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 items-center justify-between">
           {/* Left Side - Text Content */}
@@ -57,7 +57,7 @@ const Enquiry = () => {
             transition={{ duration: 0.6 }}
           >
             <motion.h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#b8c7e0] leading-tight mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -66,7 +66,7 @@ const Enquiry = () => {
             </motion.h1>
 
             <motion.h2
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-blue-900 leading-tight mb-8"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0bc0df] leading-tight mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -75,7 +75,7 @@ const Enquiry = () => {
             </motion.h2>
 
             <motion.p
-              className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl"
+              className="text-lg sm:text-xl text-[#e5edfc] leading-relaxed max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -93,7 +93,7 @@ const Enquiry = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+            <div className="bg-white/12 rounded-2xl shadow-2xl p-8 border border-gray-100">
               {/* Alerts */}
               {success && (
                 <motion.div
@@ -122,13 +122,13 @@ const Enquiry = () => {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 {/* Full Name */}
                 <div className="space-y-2">
-                  <label className="block text-sm font-semibold text-gray-700">
+                  <label className="block text-sm font-semibold text-[#e5edfc]">
                     Full Name
                   </label>
                   <input
                     type="text"
                     placeholder="Full Name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 text-[#e5edfc] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                     {...register("fullname", { required: true })}
                   />
                   {errors.fullname && (
@@ -146,13 +146,13 @@ const Enquiry = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Email */}
                   <div className="space-y-2">
-                    <label className="block text-sm font-semibold text-gray-700">
+                    <label className="block text-sm font-semibold text-[#e5edfc]">
                       Email
                     </label>
                     <input
                       type="email"
                       placeholder="email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                      className="w-full px-4 py-3 text-[#e5edfc] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                       {...register("email", {
                         required: true,
                         pattern:
@@ -172,13 +172,13 @@ const Enquiry = () => {
 
                   {/* Mobile */}
                   <div className="space-y-2">
-                    <label className="block text-sm font-semibold text-gray-700">
+                    <label className="block text-sm font-semibold text-[#e5edfc]">
                       Mobile
                     </label>
                     <input
                       type="tel"
                       placeholder="Mobile"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                      className="w-full px-4 py-3 text-[#e5edfc] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                       {...register("mobile", {
                         required: true,
                         pattern: /^[7-9]\d{9}$/i,
@@ -199,13 +199,13 @@ const Enquiry = () => {
 
                 {/* Business Name */}
                 <div className="space-y-2">
-                  <label className="block text-sm font-semibold text-gray-700">
+                  <label className="block text-sm font-semibold text-[#e5edfc]">
                     Business Name
                   </label>
                   <input
                     type="text"
                     placeholder="Business Name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 text-[#e5edfc] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
                     {...register("company", { required: true })}
                   />
                   {errors.company && (
@@ -221,13 +221,13 @@ const Enquiry = () => {
 
                 {/* Message */}
                 <div className="space-y-2">
-                  <label className="block text-sm font-semibold text-gray-700">
+                  <label className="block text-sm font-semibold text-[#e5edfc]">
                     Message
                   </label>
                   <textarea
                     placeholder="Message Here"
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 resize-none"
+                    className="w-full px-4 py-3 text-[#e5edfc] border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200 resize-none"
                     {...register("message")}
                   ></textarea>
                 </div>

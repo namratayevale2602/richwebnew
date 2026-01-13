@@ -158,10 +158,10 @@ const Career = () => {
           </div>
 
           <div className="w-full sm:w-1/2">
-            <h1 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-4">
+            <h1 className="text-3xl sm:text-4xl font-bold text-[#b8c7e0] mb-4">
               {intro[0]?.title || "Join Our Team"}
             </h1>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-[#e5edfc] text-lg leading-relaxed">
               {intro[0]?.description ||
                 "We're looking for talented individuals to join our growing team."}
             </p>
@@ -171,7 +171,7 @@ const Career = () => {
 
       {/* Current Openings */}
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl w-full py-16">
-        <h2 className="text-3xl sm:text-4xl text-blue-900 font-bold text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl text-[#b8c7e0] font-bold text-center mb-12">
           Current Openings
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -202,43 +202,45 @@ export function Position({ position, opening, experience, type, location }) {
 
   return (
     <>
-      <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 border border-gray-100">
+      <div className=" rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 border border-gray-100">
         <div className="flex flex-col space-y-4">
           <div className="flex items-center">
-            <FaSuitcase className="text-2xl text-blue-600" />
-            <h2 className="text-xl font-bold text-gray-800 ml-4">{position}</h2>
+            <FaSuitcase className="text-2xl text-[#b8c7e0]" />
+            <h2 className="text-xl font-bold text-[#b8c7e0] ml-4">
+              {position}
+            </h2>
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div className="flex flex-wrap gap-6">
               <div>
-                <h3 className="text-sm font-semibold text-gray-600">
+                <h3 className="text-sm font-semibold text-[#e5edfc]">
                   Experience
                 </h3>
-                <p className="font-semibold text-gray-800">
+                <p className="font-semibold text-[#e5edfc]">
                   {experience} years
                 </p>
               </div>
 
               <div className="border-l border-r border-gray-300 px-6">
-                <h3 className="text-sm font-semibold text-gray-600">
+                <h3 className="text-sm font-semibold text-[#e5edfc]">
                   Positions
                 </h3>
-                <p className="font-semibold text-gray-800">{opening}</p>
+                <p className="font-semibold text-[#e5edfc]">{opening}</p>
               </div>
 
               <div>
-                <h3 className="text-sm font-semibold text-gray-600">
+                <h3 className="text-sm font-semibold text-[#e5edfc]">
                   Location
                 </h3>
-                <p className="font-semibold text-gray-800">{location}</p>
+                <p className="font-semibold text-[#e5edfc]">{location}</p>
               </div>
             </div>
 
             <div>
               <button
                 onClick={openModal}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
+                className="bg-[#073379] hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-200"
               >
                 Apply Now
               </button>

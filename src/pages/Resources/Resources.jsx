@@ -46,8 +46,8 @@ const Resources = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white pt-40">
-      <Breadcrumb page="Resources" subpage={subpage} />
+    <div className="min-h-screen  pt-40">
+      {/* <Breadcrumb page="Resources" subpage={subpage} /> */}
       {renderResourceContent()}
     </div>
   );

@@ -67,10 +67,12 @@ const Case = ({ title, icon, industry_id, product_id }) => {
 
   return (
     <Link to={url}>
-      <div className="group card bg-sky-100 hover:bg-blue-950 hover:text-white w-[350px] shadow-md hover:shadow-sm cursor-pointer transition-all duration-300">
+      <div className="group card bg-white/12 hover:bg-blue-950 hover:text-white w-[350px] shadow-md hover:shadow-sm cursor-pointer transition-all duration-300">
         <div className="card-body flex flex-row-reverse justify-between items-center p-4">
           <div className="w-full ps-16">
-            <h2 className="card-title text-xl font-semibold">{title}</h2>
+            <h2 className="card-title text-xl text-[#e5edfc] font-semibold">
+              {title}
+            </h2>
           </div>
           <img
             src={icon}

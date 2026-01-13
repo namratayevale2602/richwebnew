@@ -249,14 +249,14 @@ const Digital = ({ subpage }) => {
       >
         {/* Title */}
         <div className="flex flex-col items-center text-center">
-          <h2 className="text-3xl font-bold md:text-5xl capitalize">
+          <h2 className="text-3xl text-[#b8c7e0] font-bold md:text-5xl capitalize">
             {subpage.details
               .split("-")
               .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
               .join(" ")}{" "}
             Services That We Provide
           </h2>
-          <p className="mb-8 mt-4 max-w-xl text-base text-gray-500 md:mb-12 md:text-lg lg:mb-16">
+          <p className="mb-8 mt-4 max-w-xl text-base text-[#0bc0df] md:mb-12 md:text-lg lg:mb-16">
             We are one of the best{" "}
             {subpage.details
               .split("-")
@@ -290,7 +290,7 @@ const Digital = ({ subpage }) => {
 
 export function DigitalCard({ title, subtitle, image, description }) {
   return (
-    <div className="grid gap-6 rounded-md p-8 md:p-10 bg-sky-100 shadow-md hover:shadow-lg transition-shadow duration-300">
+    <div className="grid gap-6 rounded-md p-8 md:p-10 bg-white/12 shadow-md hover:shadow-lg transition-shadow duration-300">
       <img
         src={imageMapping[image]}
         width={100}
@@ -299,9 +299,9 @@ export function DigitalCard({ title, subtitle, image, description }) {
         className="rounded-full object-cover"
       />
       <div>
-        <h3 className="text-xl font-semibold text-gray-800 mb-1">{title}</h3>
+        <h3 className="text-xl font-semibold text-[#0895d9] mb-1">{title}</h3>
       </div>
-      <p className="text-sm text-gray-500 text-justify leading-relaxed">
+      <p className="text-sm text-[#e5edfc] text-justify leading-relaxed">
         {description}
       </p>
     </div>

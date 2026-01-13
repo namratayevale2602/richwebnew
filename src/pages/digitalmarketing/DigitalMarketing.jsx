@@ -175,15 +175,6 @@ const DigitalMarketing = () => {
     <div className="min-h-screen">
       {/* Hero Section with Image */}
       <section className="relative overflow-hidden pt-24 pb-16 md:pt-32 md:pb-24">
-        <div className="absolute inset-0">
-          <img
-            src={serviceImage}
-            alt={service.label}
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0cc0e1] via-[#83bfdf] to-[#137bca]"></div>
-        </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -193,11 +184,11 @@ const DigitalMarketing = () => {
           >
             {/* Text Content */}
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#b8c7e0] mb-6 leading-tight">
                 {service.hero.title}
               </h1>
 
-              <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
+              <p className="text-lg md:text-xl text-[#e5edfc] mb-8 leading-relaxed">
                 {service.hero.description}
               </p>
 
@@ -207,7 +198,7 @@ const DigitalMarketing = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => navigate("/contact")}
-                  className="bg-white text-[#07337a] px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                  className="bg-white/12 text-[#e5edfc] px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
                 >
                   Get Free Marketing Audit
                   <ArrowRight className="h-5 w-5" />
@@ -252,7 +243,7 @@ const DigitalMarketing = () => {
       {service.hero.features && (
         <section className="py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+            <h2 className="text-3xl font-bold text-[#b8c7e0] text-center mb-8">
               What We Deliver
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -263,13 +254,13 @@ const DigitalMarketing = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+                  className="bg-white/12 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
                 >
                   <div className="flex items-start gap-4">
                     <div className="bg-[#127cc9] p-3 rounded-xl">
                       <Check className="h-6 w-6 text-white" />
                     </div>
-                    <p className="text-gray-700 text-lg font-medium">
+                    <p className="text-[#e5edfc] text-lg font-medium">
                       {feature}
                     </p>
                   </div>
@@ -282,7 +273,7 @@ const DigitalMarketing = () => {
 
       {/* Overview Section */}
       {service.whatWeDeliver && (
-        <section className="py-16 bg-gradient-to-b from-white to-blue-50">
+        <section className="py-16 ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -295,32 +286,32 @@ const DigitalMarketing = () => {
                   <Home className="h-8 w-8 text-[#127cc9]" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-gray-900">
+                  <h2 className="text-3xl font-bold text-[#b8c7e0]">
                     {service.whatWeDeliver.title}
                   </h2>
-                  <p className="text-gray-600 mt-2">
+                  <p className="text-[#e5edfc] mt-2">
                     {service.whatWeDeliver.description}
                   </p>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl border border-blue-100">
-                  <h3 className="font-bold text-gray-900 text-xl mb-4">
+                <div className="bg-white/12 p-6 rounded-2xl border border-blue-100">
+                  <h3 className="font-bold text-[#e5edfc] text-xl mb-4">
                     Our Approach
                   </h3>
                   <ul className="space-y-3">
                     {service.whatWeDeliver.approach?.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-[#127cc9] mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-700">{item}</span>
+                        <span className="text-[#e5edfc]">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl border border-blue-100">
-                  <h3 className="font-bold text-gray-900 text-xl mb-4">
+                <div className="bg-white/12 p-6 rounded-2xl border border-blue-100">
+                  <h3 className="font-bold text-[#e5edfc] text-xl mb-4">
                     Key Metrics
                   </h3>
                   <ul className="space-y-3">
@@ -329,7 +320,7 @@ const DigitalMarketing = () => {
                         key={idx}
                         className="flex items-center justify-between"
                       >
-                        <span className="text-gray-700">{metric.label}</span>
+                        <span className="text-[#e5edfc]">{metric.label}</span>
                         <span className="font-bold text-[#127cc9]">
                           {metric.value}
                         </span>
@@ -345,7 +336,7 @@ const DigitalMarketing = () => {
 
       {/* Solutions Section */}
       {service.solutions && (
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -357,7 +348,7 @@ const DigitalMarketing = () => {
                 <div className="p-3 bg-blue-50 rounded-xl border border-blue-100">
                   <Briefcase className="h-8 w-8 text-[#127cc9]" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">
+                <h2 className="text-3xl font-bold text-[#b8c7e0]">
                   Comprehensive Solutions
                 </h2>
               </div>
@@ -369,7 +360,7 @@ const DigitalMarketing = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="bg-gradient-to-br from-white to-blue-50 p-6 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300"
+                    className="bg-white/12 p-6 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all duration-300"
                   >
                     <div className="flex items-center gap-4 mb-4">
                       <div className="p-3 rounded-xl bg-[#127cc9] text-white">
@@ -377,16 +368,18 @@ const DigitalMarketing = () => {
                           <TrendingUp className="h-6 w-6" />
                         )}
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900">
+                      <h3 className="text-xl font-bold text-[#b8c7e0]">
                         {solution.title}
                       </h3>
                     </div>
-                    <p className="text-gray-600 mb-4">{solution.description}</p>
+                    <p className="text-[#e5edfc] mb-4">
+                      {solution.description}
+                    </p>
                     <div className="space-y-2">
                       {solution.features?.map((feature, idx) => (
                         <div key={idx} className="flex items-start gap-2">
                           <div className="w-2 h-2 rounded-full bg-[#127cc9] mt-2"></div>
-                          <span className="text-gray-700 text-sm">
+                          <span className="text-[#e5edfc] text-sm">
                             {feature}
                           </span>
                         </div>
@@ -402,7 +395,7 @@ const DigitalMarketing = () => {
 
       {/* Strategies Section */}
       {service.strategies && (
-        <section id="strategies" className="py-16 bg-blue-50">
+        <section id="strategies" className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -415,10 +408,10 @@ const DigitalMarketing = () => {
                   <BarChart3 className="h-8 w-8 text-[#127cc9]" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-gray-900">
+                  <h2 className="text-3xl font-bold text-[#b8c7e0]">
                     {service.strategies.title}
                   </h2>
-                  <p className="text-gray-600 mt-2">
+                  <p className="text-[#e5edfc] mt-2">
                     {service.strategies.description}
                   </p>
                 </div>
@@ -431,7 +424,7 @@ const DigitalMarketing = () => {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="bg-gradient-to-r from-white to-blue-50 p-6 rounded-2xl border border-gray-100"
+                    className="bg-white/12 p-6 rounded-2xl border border-gray-100"
                   >
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0">
@@ -440,20 +433,20 @@ const DigitalMarketing = () => {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        <h3 className="text-xl font-bold text-[#b8c7e0] mb-2">
                           {strategy.title}
                         </h3>
-                        <p className="text-gray-600 mb-4">
+                        <p className="text-[#e5edfc] mb-4">
                           {strategy.description}
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                           {strategy.tactics?.map((tactic, idx) => (
                             <div
                               key={idx}
-                              className="flex items-center gap-2 p-2 bg-white rounded-lg border border-blue-100"
+                              className="flex items-center gap-2 p-2 rounded-lg "
                             >
                               <div className="w-2 h-2 rounded-full bg-[#127cc9] flex-shrink-0"></div>
-                              <span className="text-gray-700 text-sm">
+                              <span className="text-[#e5edfc] text-sm">
                                 {tactic}
                               </span>
                             </div>
@@ -471,7 +464,7 @@ const DigitalMarketing = () => {
 
       {/* Process Section */}
       {service.process && (
-        <section className="py-16 bg-white">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -484,10 +477,10 @@ const DigitalMarketing = () => {
                   <Calendar className="h-8 w-8 text-[#127cc9]" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-gray-900">
+                  <h2 className="text-3xl font-bold text-[#b8c7e0]">
                     {service.process.title}
                   </h2>
-                  <p className="text-gray-600 mt-2">
+                  <p className="text-[#e5edfc] mt-2">
                     {service.process.description}
                   </p>
                 </div>
@@ -502,7 +495,7 @@ const DigitalMarketing = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: index * 0.1 }}
-                        className="bg-gradient-to-br from-white to-blue-50 p-6 rounded-2xl border border-gray-200 hover:border-blue-200 transition-all duration-300"
+                        className="bg-white/12 p-6 rounded-2xl border border-gray-200 hover:border-blue-200 transition-all duration-300"
                       >
                         <div className="flex items-center gap-4 mb-4">
                           <div className="h-12 w-12 rounded-xl flex items-center justify-center bg-[#127cc9] text-white">
@@ -510,16 +503,18 @@ const DigitalMarketing = () => {
                               {index + 1}
                             </span>
                           </div>
-                          <h3 className="text-lg font-bold text-gray-900">
+                          <h3 className="text-lg font-bold text-[#b8c7e0]">
                             {step.title}
                           </h3>
                         </div>
-                        <p className="text-gray-600 mb-4">{step.description}</p>
+                        <p className="text-[#e5edfc] mb-4">
+                          {step.description}
+                        </p>
                         <div className="space-y-2">
                           {step.activities?.map((activity, idx) => (
                             <div key={idx} className="flex items-center gap-2">
                               <div className="w-2 h-2 rounded-full bg-[#127cc9]"></div>
-                              <span className="text-gray-700 text-sm">
+                              <span className="text-[#e5edfc] text-sm">
                                 {activity}
                               </span>
                             </div>
@@ -537,7 +532,7 @@ const DigitalMarketing = () => {
 
       {/* Benefits Section */}
       {service.benefits && (
-        <section className="py-16 bg-blue-50">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -550,10 +545,10 @@ const DigitalMarketing = () => {
                   <TrendingUp className="h-8 w-8 text-[#127cc9]" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-gray-900">
+                  <h2 className="text-3xl font-bold text-[#b8c7e0]">
                     {service.benefits.title}
                   </h2>
-                  <p className="text-gray-600 mt-2">
+                  <p className="text-[#e5edfc] mt-2">
                     {service.benefits.description}
                   </p>
                 </div>
@@ -568,7 +563,7 @@ const DigitalMarketing = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                       whileHover={{ y: -5 }}
-                      className="bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-xl transition-all duration-300"
+                      className="bg-white/12 p-8 rounded-2xl border border-gray-100 hover:border-blue-200 transition-all duration-300"
                     >
                       <div className="flex items-start gap-4 mb-6">
                         <div className="p-3 rounded-xl bg-[#127cc9] text-white">
@@ -576,11 +571,11 @@ const DigitalMarketing = () => {
                             <TrendingUp className="h-6 w-6" />
                           )}
                         </div>
-                        <h3 className="text-xl font-bold text-gray-900">
+                        <h3 className="text-xl font-bold text-[#b8c7e0]">
                           {benefit.title}
                         </h3>
                       </div>
-                      <p className="text-gray-600">{benefit.description}</p>
+                      <p className="text-[#e5edfc]">{benefit.description}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -591,7 +586,7 @@ const DigitalMarketing = () => {
       )}
 
       {/* Contact Section */}
-      <section className="py-16 bg-gradient-to-r from-[#0cc0e1] via-[#83bfdf] to-[#137bca]">
+      <section className="py-16 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -603,50 +598,50 @@ const DigitalMarketing = () => {
               <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
                 <BarChart3 className="h-8 w-8 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-white">
+              <h2 className="text-3xl font-bold text-[#b8c7e0]">
                 Ready to Boost Your Marketing?
               </h2>
             </div>
 
-            <p className="text-lg text-white/90 mb-8">
+            <p className="text-lg text-[#e5edfc] mb-8">
               Contact us today for a free marketing audit and let's create a
               strategy that drives real results for your business.
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Contact Form */}
-              <div className="bg-white p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <div className="bg-white/12 p-8 rounded-2xl">
+                <h3 className="text-2xl font-bold text-[#e5edfc] mb-6">
                   Request a Quote
                 </h3>
                 <form className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-[#e5edfc] mb-2">
                       Business Name
                     </label>
                     <input
                       type="text"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#127cc9] focus:ring-2 focus:ring-blue-200 transition-all"
+                      className="w-full px-4 py-3 rounded-lg text-[#e5edfc] border border-gray-300 focus:border-[#127cc9] focus:ring-2 focus:ring-blue-200 transition-all"
                       placeholder="Your Company Name"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-[#e5edfc] mb-2">
                       Email Address
                     </label>
                     <input
                       type="email"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#127cc9] focus:ring-2 focus:ring-blue-200 transition-all"
+                      className="w-full px-4 py-3 rounded-lg text-[#e5edfc] border border-gray-300 focus:border-[#127cc9] focus:ring-2 focus:ring-blue-200 transition-all"
                       placeholder="contact@company.com"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-[#e5edfc] mb-2">
                       Marketing Goals
                     </label>
                     <textarea
                       rows="4"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#127cc9] focus:ring-2 focus:ring-blue-200 transition-all"
+                      className="w-full px-4 py-3 rounded-lg text-[#e5edfc] border border-gray-300 focus:border-[#127cc9] focus:ring-2 focus:ring-blue-200 transition-all"
                       placeholder="Tell us about your marketing objectives..."
                     ></textarea>
                   </div>
@@ -663,8 +658,10 @@ const DigitalMarketing = () => {
 
               {/* Contact Info */}
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-[#07337a] to-[#127cc9] text-white p-8 rounded-2xl">
-                  <h3 className="text-2xl font-bold mb-6">Why Work With Us?</h3>
+                <div className="bg-white/12 text-white p-8 rounded-2xl">
+                  <h3 className="text-2xl text-[#b8c7e0] font-bold mb-6">
+                    Why Work With Us?
+                  </h3>
                   <div className="space-y-4">
                     {[
                       {
@@ -686,7 +683,9 @@ const DigitalMarketing = () => {
                       <div key={idx} className="flex items-center gap-4">
                         {item.icon}
                         <div>
-                          <h4 className="font-semibold">{item.title}</h4>
+                          <h4 className="text-[#e5edfc] font-semibold">
+                            {item.title}
+                          </h4>
                           <p className="text-white/80 text-sm">{item.desc}</p>
                         </div>
                       </div>
@@ -694,8 +693,8 @@ const DigitalMarketing = () => {
                   </div>
                 </div>
 
-                <div className="bg-white p-8 rounded-2xl border border-gray-200">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                <div className="bg-white/12 p-8 rounded-2xl ">
+                  <h3 className="text-2xl font-bold text-[#b8c7e0] mb-6">
                     Contact Information
                   </h3>
                   <div className="space-y-4">
@@ -715,7 +714,7 @@ const DigitalMarketing = () => {
                     ].map((item, idx) => (
                       <div key={idx} className="flex items-start gap-4">
                         {item.icon}
-                        <span className="text-gray-700">{item.text}</span>
+                        <span className="text-[#e5edfc]">{item.text}</span>
                       </div>
                     ))}
                   </div>

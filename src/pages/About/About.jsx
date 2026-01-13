@@ -15,7 +15,7 @@ const AboutPage = () => {
   return (
     <div className="pt-40">
       {/* Breadcrumb */}
-      <Breadcrumb page="About" />
+      {/* <Breadcrumb page="About" /> */}
       <AboutHero />
       <Counter />
       <AboutUs />

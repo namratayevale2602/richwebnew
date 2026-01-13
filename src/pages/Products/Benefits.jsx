@@ -205,13 +205,13 @@ const Benefits = ({ subpage }) => {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             {/* Content on left side */}
             <div className="w-full lg:w-1/2">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              <h1 className="text-4xl font-bold text-[#b8c7e0] mb-4">
                 {benefit.title}
               </h1>
-              <h2 className="text-2xl font-semibold text-gray-700 mb-6">
+              <h2 className="text-2xl font-semibold text-[#0bc0df] mb-6">
                 {benefit.subtitle}
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
+              <p className="text-[#e5edfc] text-lg leading-relaxed mb-8">
                 {benefit.description}
               </p>
 
@@ -219,7 +219,7 @@ const Benefits = ({ subpage }) => {
                 {benefit.benefits.map((item, index) => (
                   <div key={index} className="flex items-start">
                     <FcApproval className="text-2xl mr-4 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700 text-lg">
+                    <span className="text-[#0895d9] text-lg">
                       {item.benefits}
                     </span>
                   </div>

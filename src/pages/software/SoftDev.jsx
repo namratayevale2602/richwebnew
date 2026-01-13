@@ -183,15 +183,6 @@ const SoftDev = () => {
     <div className="min-h-screen">
       {/* Hero Section with Image */}
       <section className="relative overflow-hidden pt-24 pb-4 md:pt-32 md:pb-24">
-        <div className="absolute inset-0">
-          <img
-            src={unsplashImages[slug] || unsplashImages["web-development"]}
-            alt={service.label}
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0cc0e1] via-[#83bfdf] to-[#137bca]"></div>
-        </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -201,11 +192,11 @@ const SoftDev = () => {
           >
             {/* Text Content */}
             <div>
-              <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-6 leading-tight">
+              <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold text-[#b8c7e0] mb-3 md:mb-6 leading-tight">
                 {service.hero.title}
               </h1>
 
-              <p className=" md:text-xl text-white/90 mb-3 md:mb-8 leading-relaxed">
+              <p className=" md:text-xl text-[#0bc0df] mb-3 md:mb-8 leading-relaxed">
                 {service.hero.description}
               </p>
 
@@ -215,7 +206,7 @@ const SoftDev = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => navigate("/contact")}
-                  className="bg-white text-[#07337a] md:px-8 md:py-4 py-2 rounded-xl md:font-semibold hover:bg-gray-50 transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                  className="bg-white/12 text-[#e5edfc] md:px-8 md:py-4 py-2 rounded-xl md:font-semibold shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
                 >
                   Get Free Consultation
                   <ArrowRight className="h-5 w-5" />
@@ -257,13 +248,13 @@ const SoftDev = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className="bg-white md:p-6 p-3 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+                  className="bg-white/12 md:p-6 p-3 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-50"
                 >
                   <div className="flex items-start gap-4">
                     <div className="bg-[#127cc9] p-3 rounded-xl">
                       <Check className="h-6 w-6 text-white" />
                     </div>
-                    <p className="text-gray-700 md:text-lg md:font-medium">
+                    <p className="text-[#e5edfc] md:text-lg md:font-medium">
                       {feature}
                     </p>
                   </div>
@@ -276,13 +267,13 @@ const SoftDev = () => {
 
       {/* What We Deliver Section */}
       {service.whatWeDeliver && (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-[#07337a] mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold text-[#b8c7e0] mb-6">
                 {service.whatWeDeliver.title}
               </h2>
-              <p className="md:text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="md:text-lg text-[#0bc0df] max-w-3xl mx-auto">
                 {service.whatWeDeliver.description}
               </p>
             </div>
@@ -296,7 +287,7 @@ const SoftDev = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     whileHover={{ y: -5 }}
-                    className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+                    className="bg-white/12 p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
                   >
                     <div className="flex items-center gap-4 mb-6">
                       <div
@@ -310,16 +301,18 @@ const SoftDev = () => {
                       >
                         <Code className="h-8 w-8 text-[#127cc9]" />
                       </div>
-                      <h3 className="md:text-2xl font-bold text-gray-900">
+                      <h3 className="md:text-2xl font-bold text-[#e5edfc]">
                         {solution.title}
                       </h3>
                     </div>
-                    <p className="text-gray-600 mb-6">{solution.description}</p>
+                    <p className="text-[#0bc0df] mb-6">
+                      {solution.description}
+                    </p>
                     <div className="space-y-3">
                       {solution.features.map((feature, idx) => (
                         <div key={idx} className="flex items-start gap-3">
                           <Check className="h-5 w-5 text-[#127cc9] mt-1 flex-shrink-0" />
-                          <span className="text-gray-700">{feature}</span>
+                          <span className="text-[#e5edfc]">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -333,13 +326,13 @@ const SoftDev = () => {
 
       {/* Process Section */}
       {service.process && (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-[#07337a] mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold text-[#e5edfc] mb-6">
                 {service.process.title}
               </h2>
-              <p className="md:text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="md:text-lg text-[#0bc0df] max-w-3xl mx-auto">
                 {service.process.description}
               </p>
             </div>
@@ -380,20 +373,22 @@ const SoftDev = () => {
                         )}
                       </div>
 
-                      <div className="flex-1 bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
-                        <h3 className="md:text-2xl font-bold text-[#07337a] mb-3">
+                      <div className="flex-1 bg-white/12 p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <h3 className="md:text-2xl font-bold text-[#e5edfc] mb-3">
                           {step.title}
                         </h3>
-                        <p className="text-gray-600 mb-6">{step.description}</p>
+                        <p className="text-[#0bc0df] mb-6">
+                          {step.description}
+                        </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                           {step.activities &&
                             step.activities.map((activity, idx) => (
                               <div
                                 key={idx}
-                                className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
+                                className="flex items-center gap-3 p-3 rounded-lg"
                               >
                                 <div className="w-2 h-2 rounded-full bg-[#127cc9]"></div>
-                                <span className="text-gray-700">
+                                <span className="text-[#e5edfc]">
                                   {activity}
                                 </span>
                               </div>
@@ -411,13 +406,13 @@ const SoftDev = () => {
 
       {/* Benefits Section */}
       {service.benefits && (
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-[#07337a] mb-6">
+              <h2 className="text-2xl md:text-4xl font-bold text-[#e5edfc] mb-6">
                 {service.benefits.title}
               </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg text-[#0bc0df] max-w-3xl mx-auto">
                 {service.benefits.description}
               </p>
             </div>
@@ -431,7 +426,7 @@ const SoftDev = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     whileHover={{ y: -10 }}
-                    className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300"
+                    className="bg-white/12 p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300"
                   >
                     <div className="flex items-center gap-4 mb-6">
                       <div className="p-3 rounded-xl bg-[#127cc9] text-white">
@@ -439,11 +434,11 @@ const SoftDev = () => {
                           <TrendingUp className="h-6 w-6" />
                         )}
                       </div>
-                      <h3 className="md:text-xl font-bold text-[#07337a]">
+                      <h3 className="md:text-xl font-bold text-[#e5edfc]">
                         {benefit.title}
                       </h3>
                     </div>
-                    <p className="text-gray-600">{benefit.description}</p>
+                    <p className="text-[#e5edfc]">{benefit.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -453,13 +448,13 @@ const SoftDev = () => {
       )}
 
       {/* Contact Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-trransparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#07337a] mb-6">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#b8c7e0] mb-6">
               Ready to Get Started?
             </h2>
-            <p className="md:text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="md:text-lg text-[#0bc0df] max-w-3xl mx-auto">
               Contact us today for a free consultation and let's build something
               amazing together.
             </p>
@@ -467,48 +462,48 @@ const SoftDev = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Contact Form */}
-            <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-              <h3 className="md:text-2xl font-bold text-[#07337a] mb-6">
+            <div className="bg-white/12 p-8 rounded-2xl shadow-xl border border-gray-100">
+              <h3 className="md:text-2xl font-bold text-[#b8c7e0] mb-6">
                 Get in Touch
               </h3>
               <form className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-[#e5edfc] mb-2">
                     Full Name
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#127cc9] focus:ring-2 focus:ring-blue-200 transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#127cc9] focus:ring-2 text-[#e5edfc] focus:ring-blue-200 transition-all"
                     placeholder="John Doe"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-[#e5edfc] mb-2">
                     Email Address
                   </label>
                   <input
                     type="email"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#127cc9] focus:ring-2 focus:ring-blue-200 transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#127cc9] focus:ring-2 text-[#e5edfc] focus:ring-blue-200 transition-all"
                     placeholder="john@example.com"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-[#e5edfc] mb-2">
                     Phone Number
                   </label>
                   <input
                     type="tel"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#127cc9] focus:ring-2 focus:ring-blue-200 transition-all"
+                    className="w-full px-4 py-3 rounded-lg border text-[#e5edfc] border-gray-300 focus:border-[#127cc9] focus:ring-2 focus:ring-blue-200 transition-all"
                     placeholder="+91 98765 43210"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-[#e5edfc] mb-2">
                     Message
                   </label>
                   <textarea
                     rows="4"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#127cc9] focus:ring-2 focus:ring-blue-200 transition-all"
+                    className="w-full px-4 py-3 rounded-lg text-[#e5edfc] border border-gray-300 focus:border-[#127cc9] focus:ring-2 focus:ring-blue-200 transition-all"
                     placeholder="Tell us about your project..."
                   ></textarea>
                 </div>
@@ -525,35 +520,43 @@ const SoftDev = () => {
 
             {/* Contact Info */}
             <div className="space-y-8">
-              <div className="bg-[#127cc9] text-white p-8 rounded-2xl shadow-xl">
-                <h3 className="text-2xl font-bold mb-6">Why Choose Us?</h3>
+              <div className="bg-[#127cc9]/12 text-white p-8 rounded-2xl shadow-xl">
+                <h3 className="text-2xl text-[#b8c7e0] font-bold mb-6">
+                  Why Choose Us?
+                </h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
                     <Clock className="h-6 w-6" />
                     <div>
-                      <h4 className="font-semibold">Quick Response</h4>
+                      <h4 className="text-[#e5edfc] font-semibold">
+                        Quick Response
+                      </h4>
                       <p className="text-white/80">Response within 2 hours</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
                     <DollarSign className="h-6 w-6" />
                     <div>
-                      <h4 className="font-semibold">Transparent Pricing</h4>
+                      <h4 className="text-[#e5edfc] font-semibold">
+                        Transparent Pricing
+                      </h4>
                       <p className="text-white/80">No hidden costs</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
                     <Headphones className="h-6 w-6" />
                     <div>
-                      <h4 className="font-semibold">24/7 Support</h4>
+                      <h4 className="text-[#e5edfc] font-semibold">
+                        24/7 Support
+                      </h4>
                       <p className="text-white/80">Dedicated support team</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-                <h3 className="text-2xl font-bold text-[#07337a] mb-6">
+              <div className="bg-white/12 p-8 rounded-2xl shadow-xl border border-gray-100">
+                <h3 className="text-2xl font-bold text-[#b8c7e0] mb-6">
                   Contact Information
                 </h3>
                 <div className="space-y-4">
@@ -561,7 +564,7 @@ const SoftDev = () => {
                     <Phone className="h-5 w-5 text-[#127cc9]" />
                     <a
                       href="tel:+919595902006"
-                      className="text-gray-700 hover:text-[#127cc9] transition-colors"
+                      className="text-[#e5edfc] hover:text-[#127cc9] transition-colors"
                     >
                       +91 95959 02006
                     </a>
@@ -570,14 +573,14 @@ const SoftDev = () => {
                     <Mail className="h-5 w-5 text-[#127cc9]" />
                     <a
                       href="mailto:support@richsol.com"
-                      className="text-gray-700 hover:text-[#127cc9] transition-colors"
+                      className="text-[#e5edfc] hover:text-[#127cc9] transition-colors"
                     >
                       support@richsol.com
                     </a>
                   </div>
                   <div className="flex items-start gap-4">
                     <MapPin className="h-5 w-5 text-[#127cc9] mt-1" />
-                    <p className="text-gray-700">
+                    <p className="text-[#e5edfc]">
                       4th Floor, Akravi Disha, Nashik, Maharashtra 422002
                     </p>
                   </div>
@@ -589,16 +592,16 @@ const SoftDev = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-[#0cc0e1] via-[#83bfdf] to-[#137bca]">
+      <section className="py-16 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-4xl font-bold text-white mb-6"
+            className="text-3xl md:text-4xl font-bold text-[#b8c7e0] mb-6"
           >
             Ready to Transform Your Business?
           </motion.h2>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-[#0bc0df] mb-8 max-w-3xl mx-auto">
             Let's discuss your project and create a solution that exceeds your
             expectations.
           </p>
@@ -607,7 +610,7 @@ const SoftDev = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => navigate("/contact")}
-              className="bg-white text-[#07337a] px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-colors shadow-lg hover:shadow-xl"
+              className="bg-white/12 text-[#b8c7e0] px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-xl"
             >
               Start Your Project
             </motion.button>

@@ -5,7 +5,7 @@ import { reachOut } from "../../assets/index";
 
 // JSON data
 const enquiryFlexData = {
-  background: "#004ECC",
+  background: "#004ecc40",
   image: {
     src: reachOut,
     alt: "offer",
@@ -19,13 +19,13 @@ const enquiryFlexData = {
       text: "Schedule a demo",
       link: "/schedule-a-demo",
       className:
-        "bg-white text-sky-600 px-3 sm:px-10 py-2 rounded-full me-2 sm:me-5 hover:bg-slate-200 capitalize",
+        "bg-[#073379] text-[#e5edfc] px-3 sm:px-10 py-2 rounded-full me-2 sm:me-5 hover:bg-slate-200 capitalize",
     },
     {
       text: "Talk to Sales",
       link: "/contact",
       className:
-        "bg-white text-sky-600 px-3 sm:px-10 py-2 rounded-full hover:bg-slate-200 capitalize",
+        "bg-[#073379] text-[#e5edfc] px-3 sm:px-10 py-2 rounded-full hover:bg-slate-200 capitalize",
     },
   ],
 };
@@ -68,7 +68,7 @@ const EnquiryFlex = () => {
             viewport={{ once: true }}
           >
             <motion.h2
-              className="card-title text-3xl font-bold mb-5"
+              className="card-title text-[#b8c7e0] text-3xl font-bold mb-5"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -77,7 +77,7 @@ const EnquiryFlex = () => {
             </motion.h2>
 
             <motion.h3
-              className="font-semibold mb-3 text-lg"
+              className="font-semibold text-[#b8c7e0] mb-3 text-lg"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -86,7 +86,7 @@ const EnquiryFlex = () => {
             </motion.h3>
 
             <motion.p
-              className="text-justify pe-3 leading-relaxed mb-6"
+              className="text-justify text-[#e5edfc] pe-3 leading-relaxed mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
@@ -110,7 +110,7 @@ const EnquiryFlex = () => {
                     to={button.link}
                     className={
                       button.className +
-                      " transition-all duration-200 font-medium"
+                      " transition-all duration-200 font-medium "
                     }
                   >
                     {button.text}

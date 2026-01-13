@@ -15,6 +15,7 @@ import {
   Shield,
   Cloud,
 } from "lucide-react";
+import HeroBackground from "../../components/HeroBackground";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -63,62 +64,6 @@ const HeroSection = () => {
     },
   ];
 
-  // Animation Variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  };
-
-  const floatingVariants = {
-    initial: { y: 0 },
-    animate: {
-      y: [0, -20, 0],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
-  };
-
-  const gradientVariants = {
-    animate: {
-      backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-      transition: {
-        duration: 10,
-        repeat: Infinity,
-        ease: "linear",
-      },
-    },
-  };
-
-  // Handle mouse movement for parallax
-  const handleMouseMove = (e) => {
-    const { clientX, clientY } = e;
-    const { width, height } = containerRef.current.getBoundingClientRect();
-    const x = (clientX - width / 2) / 25;
-    const y = (clientY - height / 2) / 25;
-    setMousePosition({ x, y });
-  };
-
   // Animate counters
   useEffect(() => {
     const animation = animate(count, 100, { duration: 2 });
@@ -128,63 +73,29 @@ const HeroSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-blue-950"
-      onMouseMove={handleMouseMove}
+      className="relative min-h-screen w-full overflow-hidden "
     >
-      <motion.div
-        className="absolute inset-0 z-0"
-        variants={gradientVariants}
-        animate="animate"
-        style={{
-          background:
-            "linear-gradient(-45deg, #0a0f1c, #1a1f2e, #0f172a, #172554)",
-          backgroundSize: "400% 400%",
-        }}
-      />
+      <HeroBackground />
+      <motion.div className="absolute inset-0 z-0" animate="animate" />
 
       <div className="absolute inset-0 z-1">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:80px_80px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
       </div>
 
-      {[...Array(20)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 bg-blue-400 rounded-full"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            opacity: [0.3, 0.8, 0.3],
-          }}
-          transition={{
-            duration: 2 + Math.random() * 3,
-            repeat: Infinity,
-            delay: Math.random() * 2,
-          }}
-        />
-      ))}
-
       {/* Main Content Container */}
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-42">
         <div className="max-w-7xl mx-auto w-full">
           <motion.div
-            variants={containerVariants}
             initial="hidden"
             animate="visible"
             className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
           >
             <div className="space-y-8 lg:space-y-12">
               <div className="space-y-6">
-                <motion.h1
-                  variants={itemVariants}
-                  className="text-3xl sm:text-6xl lg:text-7xl font-bold tracking-tight"
-                >
+                <motion.h1 className="text-3xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
                   <span className="block text-white">Transform Your</span>
                   <span className="block text-white">Digital Vision</span>
                   <motion.span
-                    variants={itemVariants}
                     className="block bg-gradient-to-r from-[#0cc0e1] via-[#83bfdf] to-[#137bca] bg-clip-text text-transparent mt-4"
                     animate={{ backgroundPosition: ["0%", "100%"] }}
                     transition={{
@@ -198,10 +109,7 @@ const HeroSection = () => {
                   </motion.span>
                 </motion.h1>
 
-                <motion.p
-                  variants={itemVariants}
-                  className="text-lg lg:text-2xl text-gray-300 max-w-2xl leading-relaxed"
-                >
+                <motion.p className="text-lg lg:text-2xl text-gray-300 max-w-2xl leading-relaxed">
                   We provide comprehensive digital solutions that blend
                   cutting-edge technology with strategic insight to drive
                   measurable business growth.
@@ -209,10 +117,7 @@ const HeroSection = () => {
               </div>
 
               {/* CTA Buttons */}
-              <motion.div
-                variants={itemVariants}
-                className="flex flex-col sm:flex-row gap-6"
-              >
+              <motion.div className="flex flex-col sm:flex-row gap-6">
                 <button className="group relative px-10 py-5 bg-gradient-to-r from-[#0cc0e1] via-[#83bfdf] to-[#137bca] text-white font-bold rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(12,192,225,0.5)] transform hover:-translate-y-1">
                   <div className="absolute inset-0 bg-gradient-to-r from-[#137bca] to-[#0cc0e1] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <span className="relative z-10 flex items-center gap-3 text-lg">
@@ -233,10 +138,7 @@ const HeroSection = () => {
               </motion.div>
 
               {/* Stats */}
-              <motion.div
-                variants={itemVariants}
-                className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-8 border-t border-white/10"
-              >
+              <motion.div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-8 border-t border-white/10">
                 {[
                   { value: "3000+", label: "Happy Clients", icon: Users },
                   { value: "1000+", label: "Projects", icon: Target },
@@ -265,7 +167,6 @@ const HeroSection = () => {
             >
               {/* Main Floating Card */}
               <motion.div
-                variants={floatingVariants}
                 initial="initial"
                 animate="animate"
                 className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 shadow-2xl"
@@ -381,11 +282,8 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Bottom Gradient Fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 to-transparent" />
-
       {/* Scroll Indicator */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
@@ -407,7 +305,7 @@ const HeroSection = () => {
             </div>
           </motion.div>
         </div>
-      </motion.div>
+      </motion.div> */}
 
       {/* Custom Styles */}
       <style jsx>{`

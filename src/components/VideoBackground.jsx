@@ -1,11 +1,11 @@
 // components/VideoBackground.jsx
 import React from "react";
 import bgvideo from "../assets/bg/bg1.mp4";
-import bgvideo1 from "../assets/bg/bg2.mp4";
+import bgvideo1 from "../assets/bg/bgslowmo.mp4";
 
 const VideoBackground = () => {
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
+    <div className="fixed inset-0 -z-50 overflow-hidden">
       <video
         autoPlay
         loop
@@ -16,8 +16,8 @@ const VideoBackground = () => {
         <source src={bgvideo1} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      {/* Optional overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      {/* Darker overlay for better text readability on all pages */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
     </div>
   );
 };

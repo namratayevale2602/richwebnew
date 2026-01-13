@@ -12,24 +12,24 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       {/* Main About Section */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-16 lg:py-24 bg-transparent">
         <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             {/* Left Content */}
             <div className="w-full lg:w-1/2 fade-in opacity-0 translate-y-4 transition-all duration-500">
               <div className="mb-8">
-                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 leading-tight">
+                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#b8c7e0] mb-4 leading-tight">
                   About Us
                 </h1>
               </div>
 
-              <h2 className="text-2xl lg:text-3xl xl:text-4xl font-semibold text-blue-900 mb-6 leading-snug">
+              <h2 className="text-2xl lg:text-3xl xl:text-4xl font-semibold text-[#0bc0df] mb-6 leading-snug">
                 The Journey Of Rich System Solution
               </h2>
 
-              <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+              <div className="space-y-4 text-[#e5edfc] text-lg leading-relaxed">
                 <p>
                   At Rich System Solution, we are Nashik's leading digital
                   marketing agency, transforming businesses since 2009 with

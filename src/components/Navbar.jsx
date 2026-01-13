@@ -449,7 +449,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
-  const brandColor = "#07337a";
+  const brandColor = "#b8c7e0";
 
   // Initialize client-side
   useEffect(() => {
@@ -500,18 +500,20 @@ const Navbar = () => {
       {/* Main Navigation */}
       <motion.nav
         className={`${
-          scrolled ? "bg-white shadow-lg" : "bg-white"
+          scrolled
+            ? "bg-white/12 backdrop-blur-xl "
+            : "bg-white/12 backdrop-blur-xl"
         } transition-all duration-300 pt-2`}
         initial={{ padding: "8px 0" }}
         animate={{
           padding: scrolled ? "4px 0" : "4px 0",
-          backgroundColor: "rgba(255,255,255,0.98)",
+          // backgroundColor: "rgba(255,255,255,0.98)",
         }}
       >
         <div className="max-w-[1650px] mx-auto px-6 flex justify-between items-center">
           {/* Logo */}
           <motion.div
-            className="flex items-center"
+            className="flex items-center bg-white rounded-b-4xl px-8"
             whileHover={{ scale: 1.03 }}
           >
             <div
@@ -534,9 +536,7 @@ const Navbar = () => {
                     closeAllMenus();
                   }}
                   className={`px-4 py-2 font-medium uppercase tracking-wider text-sm relative transition-colors cursor-pointer ${
-                    isActive(item.path)
-                      ? "text-[#07337a]"
-                      : "text-gray-800 hover:text-[#07337a]"
+                    isActive(item.path) ? "text-[#e5edfc]" : "text-[#b8c7e0]"
                   }`}
                 >
                   <span className="whitespace-nowrap">{item.label}</span>
@@ -566,16 +566,7 @@ const Navbar = () => {
                 onMouseEnter={() => setOpenDropdown(department.label)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <button
-                  className="flex items-center text-gray-800 transition-colors px-4 py-2 font-medium uppercase tracking-wider text-sm relative hover:text-[#07337a] group"
-                  style={{
-                    color:
-                      openDropdown === department.label ||
-                      isActive(department.path)
-                        ? brandColor
-                        : "inherit",
-                  }}
-                >
+                <button className="flex items-center text-[#b8c7e0] transition-colors px-4 py-2 font-medium uppercase tracking-wider text-sm relative hover:text-[#e5edfc] group">
                   <span className="whitespace-nowrap">{department.label}</span>
                   <ChevronDown
                     className={`h-3 w-3 ml-1 transition-transform ${
@@ -605,7 +596,7 @@ const Navbar = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
-                    className="absolute left-1/2 transform -translate-x-1/2 top-full w-[800px] bg-white rounded-lg shadow-xl z-50 border border-gray-200"
+                    className="absolute left-1/2 transform -translate-x-1/2 top-full w-[800px] bg-[#10182b] backdrop-blur-xl rounded-lg shadow-xl z-50 border border-gray-200"
                     onMouseEnter={() => setOpenDropdown(department.label)}
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
@@ -618,7 +609,7 @@ const Navbar = () => {
                           }}
                           className="inline-block cursor-pointer"
                         >
-                          <h3 className="text-2xl font-bold text-gray-900 hover:text-[#07337a] transition-colors">
+                          <h3 className="text-2xl font-bold text-white hover:text-[#07337a] transition-colors">
                             {department.label} Services
                           </h3>
                         </div>
@@ -639,10 +630,10 @@ const Navbar = () => {
                                   navigate(service.path);
                                   closeAllMenus();
                                 }}
-                                className="group block p-4 rounded-lg hover:bg-blue-50 transition-all border border-transparent hover:border-blue-100 cursor-pointer"
+                                className="group block p-4 rounded-lg hover:bg-white/12 transition-all border border-transparent hover:border-blue-100 cursor-pointer"
                               >
                                 <div className="flex items-start gap-4">
-                                  <div className="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg flex-shrink-0">
+                                  <div className="w-12 h-12 flex items-center justify-center bg-white/12 rounded-lg flex-shrink-0">
                                     <img
                                       src={service.image}
                                       alt={service.label}
@@ -652,10 +643,10 @@ const Navbar = () => {
                                     />
                                   </div>
                                   <div>
-                                    <h4 className="font-semibold text-gray-900 group-hover:text-[#07337a] transition-colors">
+                                    <h4 className="font-semibold text-[#b8c7e0] transition-colors">
                                       {service.label}
                                     </h4>
-                                    <p className="text-sm text-gray-600 mt-1">
+                                    <p className="text-sm text-[#e5edfc] mt-1">
                                       {service.description}
                                     </p>
                                   </div>
@@ -674,10 +665,10 @@ const Navbar = () => {
                                   navigate(service.path);
                                   closeAllMenus();
                                 }}
-                                className="group block p-4 rounded-lg hover:bg-blue-50 transition-all border border-transparent hover:border-blue-100 cursor-pointer"
+                                className="group block p-4 rounded-lg hover:bg-white/12 transition-all border border-transparent hover:border-blue-100 cursor-pointer"
                               >
                                 <div className="flex items-start gap-4">
-                                  <div className="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg flex-shrink-0">
+                                  <div className="w-12 h-12 flex items-center justify-center bg-white/12 rounded-lg flex-shrink-0">
                                     <img
                                       src={service.image}
                                       alt={service.label}
@@ -687,10 +678,10 @@ const Navbar = () => {
                                     />
                                   </div>
                                   <div>
-                                    <h4 className="font-semibold text-gray-900 group-hover:text-[#07337a] transition-colors">
+                                    <h4 className="font-semibold text-[#b8c7e0]">
                                       {service.label}
                                     </h4>
-                                    <p className="text-sm text-gray-600 mt-1">
+                                    <p className="text-sm text-[#e5edfc] mt-1">
                                       {service.description}
                                     </p>
                                   </div>
@@ -707,7 +698,7 @@ const Navbar = () => {
                             navigate(department.path);
                             closeAllMenus();
                           }}
-                          className="inline-flex items-center text-[#07337a] font-semibold hover:text-blue-800 transition-colors cursor-pointer"
+                          className="inline-flex items-center text-[#e5edfc] font-semibold cursor-pointer"
                         >
                           View All {department.label} Services
                           <ChevronDown className="h-4 w-4 ml-1 -rotate-90" />
@@ -728,8 +719,8 @@ const Navbar = () => {
                 }}
                 className={`px-4 py-2 font-medium uppercase tracking-wider text-sm relative transition-colors cursor-pointer ${
                   isActive(contactItem.path)
-                    ? "text-[#07337a]"
-                    : "text-gray-800 hover:text-[#07337a]"
+                    ? "text-[#b8c7e0]"
+                    : "text-[#b8c7e0]"
                 }`}
               >
                 <span className="whitespace-nowrap">{contactItem.label}</span>
