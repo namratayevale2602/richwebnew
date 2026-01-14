@@ -34,7 +34,7 @@ function Home() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-gray-100">
+      <div className="min-h-screen flex items-center justify-center bg-white/12">
         <div className="relative">
           <motion.div
             animate={{ rotate: 360 }}
