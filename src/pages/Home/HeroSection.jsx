@@ -92,10 +92,9 @@ const HeroSection = () => {
           >
             <div className="space-y-8 lg:space-y-12">
               <div className="space-y-6">
-                <motion.h1 className="text-3xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
-                  <span className="block text-white">Transform Your</span>
-                  <span className="block text-white">Digital Vision</span>
-                  <motion.span
+                <motion.h1 className="text-3xl text-[#e5edfc] sm:text-6xl lg:text-7xl font-bold tracking-tight">
+                  Transform Your Digital Vision
+                  <motion.h1
                     className="block bg-gradient-to-r from-[#0cc0e1] via-[#83bfdf] to-[#137bca] bg-clip-text text-transparent mt-4"
                     animate={{ backgroundPosition: ["0%", "100%"] }}
                     transition={{
@@ -103,10 +102,9 @@ const HeroSection = () => {
                       repeat: Infinity,
                       repeatType: "reverse",
                     }}
-                    style={{ backgroundSize: "200% 100%" }}
                   >
                     Into Reality
-                  </motion.span>
+                  </motion.h1>
                 </motion.h1>
 
                 <motion.p className="text-lg lg:text-2xl text-gray-300 max-w-2xl leading-relaxed">
@@ -149,10 +147,12 @@ const HeroSection = () => {
                     <div className="flex items-center justify-center gap-2 mb-2">
                       <stat.icon className="w-5 h-5 text-blue-400" />
                       <div className="text-lg md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                        {stat.value}
+                        <p>{stat.value}</p>
                       </div>
                     </div>
-                    <div className="text-sm text-gray-400">{stat.label}</div>
+                    <div className="text-sm text-gray-400">
+                      <p>{stat.label}</p>
+                    </div>
                   </div>
                 ))}
               </motion.div>
@@ -183,16 +183,6 @@ const HeroSection = () => {
 
                 {/* Card Content */}
                 <div className="relative z-10 p-8">
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                      <div className="text-white font-semibold">
-                        Our Services
-                      </div>
-                    </div>
-                    <Zap className="w-6 h-6 text-yellow-400" />
-                  </div>
-
                   {/* Services List */}
                   <div className="space-y-6">
                     {services.map((service) => (
@@ -220,7 +210,7 @@ const HeroSection = () => {
                         </div>
                         <div className="mt-3 flex items-center justify-between">
                           <div className="text-xs text-gray-400">
-                            {service.stats}
+                            <p>{service.stats}</p>
                           </div>
                           <div className="flex items-center gap-2">
                             {[...Array(3)].map((_, i) => (
@@ -241,10 +231,10 @@ const HeroSection = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="text-sm text-gray-400">
-                          Ready to start?
+                          <p>Ready to start?</p>
                         </div>
                         <div className="text-white font-semibold">
-                          Book a Free Strategy Session
+                          <p>Book a Free Strategy Session</p>
                         </div>
                       </div>
                       <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/30 transition-all">

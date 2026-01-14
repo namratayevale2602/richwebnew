@@ -503,12 +503,7 @@ const Navbar = () => {
           scrolled
             ? "bg-white/12 backdrop-blur-xl "
             : "bg-white/12 backdrop-blur-xl"
-        } transition-all duration-300 pt-2`}
-        initial={{ padding: "8px 0" }}
-        animate={{
-          padding: scrolled ? "4px 0" : "4px 0",
-          // backgroundColor: "rgba(255,255,255,0.98)",
-        }}
+        } transition-all duration-300`}
       >
         <div className="max-w-[1650px] mx-auto px-6 flex justify-between items-center">
           {/* Logo */}
@@ -613,7 +608,7 @@ const Navbar = () => {
                             {department.label} Services
                           </h3>
                         </div>
-                        <p className="text-gray-600 mt-2">
+                        <p className="text-[#e5edfc] mt-2">
                           {department.metaDescription}
                         </p>
                       </div>
@@ -633,7 +628,7 @@ const Navbar = () => {
                                 className="group block p-4 rounded-lg hover:bg-white/12 transition-all border border-transparent hover:border-blue-100 cursor-pointer"
                               >
                                 <div className="flex items-start gap-4">
-                                  <div className="w-12 h-12 flex items-center justify-center bg-white/12 rounded-lg flex-shrink-0">
+                                  <div className="w-12 h-12 flex items-center justify-center bg-[#e5edfc] rounded-lg flex-shrink-0">
                                     <img
                                       src={service.image}
                                       alt={service.label}
@@ -668,7 +663,7 @@ const Navbar = () => {
                                 className="group block p-4 rounded-lg hover:bg-white/12 transition-all border border-transparent hover:border-blue-100 cursor-pointer"
                               >
                                 <div className="flex items-start gap-4">
-                                  <div className="w-12 h-12 flex items-center justify-center bg-white/12 rounded-lg flex-shrink-0">
+                                  <div className="w-12 h-12 flex items-center justify-center bg-[#e5edfc] rounded-lg flex-shrink-0">
                                     <img
                                       src={service.image}
                                       alt={service.label}

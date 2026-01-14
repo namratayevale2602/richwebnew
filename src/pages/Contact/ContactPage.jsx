@@ -118,7 +118,7 @@ const ContactPage = () => {
       {/* Header Section */}
       <div className="w-full h-48">
         <div className="h-full w-full flex flex-col items-center justify-center py-10">
-          <h2 className="text-[#b8c7e0] text-4xl mb-5 font-bold">Contact Us</h2>
+          <h1 className="text-[#b8c7e0] text-4xl mb-5 font-bold">Contact Us</h1>
           <p className="text-[#e5edfc] mb-2 text-lg">
             We love questions and feedback - and we're always happy to help!
           </p>

@@ -67,14 +67,14 @@ const EnquiryFlex = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <motion.h2
+            <motion.h1
               className="card-title text-[#b8c7e0] text-3xl font-bold mb-5"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               {enquiryFlexData.title}
-            </motion.h2>
+            </motion.h1>
 
             <motion.h3
               className="font-semibold text-[#b8c7e0] mb-3 text-lg"

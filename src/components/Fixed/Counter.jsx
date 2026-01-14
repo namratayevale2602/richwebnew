@@ -59,10 +59,10 @@ const Counter = () => {
           viewport={{ once: true }}
           className="max-w-2xl mx-auto text-center mb-12"
         >
-          <h2 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl text-[#0bc0df] mb-4">
+          <h1 className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl text-[#b8c7e0] mb-4">
             {factsData.sectionTitle}
-          </h2>
-          <p className="max-w-xl mx-auto text-base leading-relaxed text-[#b8c7e0] ">
+          </h1>
+          <p className="max-w-xl mx-auto text-base leading-relaxed text-[#e5edfc] ">
             {factsData.sectionDescription}
           </p>
         </motion.div>
@@ -82,7 +82,9 @@ const Counter = () => {
                 alt={fact.subtitle}
                 className="w-16 h-16 filter invert mb-4"
               />
-              <CounterNumber digit={fact.number} title={fact.title} />
+              <p>
+                <CounterNumber digit={fact.number} title={fact.title} />
+              </p>
               <p className="text-[#0895d9] text-center mt-2">{fact.subtitle}</p>
             </motion.div>
           ))}

@@ -249,13 +249,13 @@ const Digital = ({ subpage }) => {
       >
         {/* Title */}
         <div className="flex flex-col items-center text-center">
-          <h2 className="text-3xl text-[#b8c7e0] font-bold md:text-5xl capitalize">
+          <h1 className="text-3xl text-[#b8c7e0] font-bold md:text-5xl capitalize">
             {subpage.details
               .split("-")
               .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
               .join(" ")}{" "}
             Services That We Provide
-          </h2>
+          </h1>
           <p className="mb-8 mt-4 max-w-xl text-base text-[#0bc0df] md:mb-12 md:text-lg lg:mb-16">
             We are one of the best{" "}
             {subpage.details

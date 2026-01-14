@@ -165,9 +165,9 @@ const FaqResource = () => {
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           {/* FAQ Questions Section */}
           <div className="w-full lg:w-3/5">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#b8c7e0] mb-10">
+            <h1 className="text-3xl sm:text-4xl font-bold text-center text-[#b8c7e0] mb-10">
               Frequently Asked Questions
-            </h2>
+            </h1>
 
             <div className="space-y-4">
               {questions

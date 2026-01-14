@@ -145,9 +145,9 @@ const ServiceIntro = ({ subpage }) => {
         </div>
 
         <div className="w-full sm:w-3/5 p-5">
-          <h2 className="text-4xl text-[#b8c7e0] font-bold capitalize">
+          <h1 className="text-4xl text-[#b8c7e0] font-bold capitalize">
             {formatTitle(introduction.title)}
-          </h2>
+          </h1>
           <h2 className="text-2xl text-[#0bc0df] my-3 font-semibold">
             {introduction.subtitle}
           </h2>

@@ -443,9 +443,9 @@ const Products = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#b8c7e0] mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#b8c7e0] mb-4">
             {productsData.sectionTitle}
-          </h2>
+          </h1>
           <p className="text-xl text-[#0bc0df] max-w-3xl mx-auto">
             {productsData.sectionDescription}
           </p>

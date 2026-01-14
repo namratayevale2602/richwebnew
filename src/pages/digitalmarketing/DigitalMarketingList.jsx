@@ -212,9 +212,9 @@ const DigitalMarketingList = () => {
                   className="bg-white/10 backdrop-blur-sm rounded-xl p-4"
                 >
                   <div className="flex text-[#e5edfc] items-center justify-center gap-2 mb-2">
-                    {stat.icon}
+                    <p>{stat.icon}</p>
                     <div className="text-2xl md:text-3xl font-bold text-[#e5edfc]">
-                      {stat.value}
+                      <p>{stat.value}</p>
                     </div>
                   </div>
                   <div className="text-sm text-white/80">{stat.label}</div>
@@ -357,9 +357,9 @@ const DigitalMarketingList = () => {
       {/* Why Choose Us */}
       <section className="py-16 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#b8c7e0] text-center mb-12">
+          <h1 className="text-3xl font-bold text-[#b8c7e0] text-center mb-12">
             Why Our Marketing Services Stand Out
-          </h2>
+          </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
@@ -408,13 +408,13 @@ const DigitalMarketingList = () => {
       {/* CTA Section */}
       <section className="py-16 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-4xl font-bold text-[#b8c7e0] mb-6"
           >
             Ready to Grow Your Business?
-          </motion.h2>
+          </motion.h1>
           <p className="text-xl text-[#e5edfc] mb-8 max-w-3xl mx-auto">
             Get a free marketing audit and discover how our strategies can
             transform your online presence and drive real business growth.

@@ -260,14 +260,14 @@ const ProductFAQ = ({ subpage = 0 }) => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.h2
+          <motion.h1
             className="text-3xl font-bold leading-tight text-[#e5edfc] sm:text-4xl lg:text-5xl mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             {faqData.sectionTitle}
-          </motion.h2>
+          </motion.h1>
           <motion.p
             className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-[#0bc0df]"
             initial={{ opacity: 0, y: 20 }}

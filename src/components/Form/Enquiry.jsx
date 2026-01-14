@@ -65,14 +65,14 @@ const Enquiry = () => {
               Have a Question or need any assistance?
             </motion.h1>
 
-            <motion.h2
+            <motion.h1
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0bc0df] leading-tight mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               Reach Out to us
-            </motion.h2>
+            </motion.h1>
 
             <motion.p
               className="text-lg sm:text-xl text-[#e5edfc] leading-relaxed max-w-2xl"

@@ -85,11 +85,11 @@ const Testimonials = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold text-[#0bc0df] mb-8 font-[Poppins] tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-[#b8c7e0] mb-8 font-[Poppins] tracking-tight">
               CLIENT
               <br />
               TESTIMONIALS
-            </h2>
+            </h1>
           </motion.div>
         </div>
 
@@ -108,14 +108,14 @@ const Testimonials = () => {
               style={{ backgroundColor: brandColor }}
             >
               <div className="relative z-10">
-                <motion.h2
+                <motion.h1
                   className="text-2xl lg:text-3xl font-bold text-white mb-6 font-[Poppins] leading-tight"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
                   {testimonialsData.sectionTitle}
-                </motion.h2>
+                </motion.h1>
 
                 <motion.p
                   className="text-blue-100 text-lg font-[Inter] font-light"
@@ -199,7 +199,7 @@ const Testimonials = () => {
 
                   {/* Testimonial Text */}
                   <blockquote className="text-lg lg:text-xl text-[#b8c7e0] leading-relaxed font-[Inter] font-light italic">
-                    "{reviews[currentReview]?.quotes}"
+                    <p> "{reviews[currentReview]?.quotes}"</p>
                   </blockquote>
 
                   {/* Author Info */}

@@ -32,23 +32,23 @@ const Offer = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.h2
+          <motion.h1
             className="text-3xl sm:text-4xl text-[#b8c7e0] font-bold antialiased capitalize mb-5 mt-16"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             {offerData.title}
-          </motion.h2>
+          </motion.h1>
 
-          <motion.h4
+          <motion.h1
             className="text-2xl text-capitalize antialiased capitalize mb-5 text-[#0bc0df] font-semibold"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             {offerData.subtitle}
-          </motion.h4>
+          </motion.h1>
 
           <motion.p
             className="text-justify mb-5 text-gray-50"
@@ -66,7 +66,7 @@ const Offer = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Link to={offerData.button.link} className={offerData.button.color}>
-              {offerData.button.text}
+              <p>{offerData.button.text}</p>
             </Link>
           </motion.div>
         </motion.div>

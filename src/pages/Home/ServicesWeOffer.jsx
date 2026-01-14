@@ -171,12 +171,10 @@ const ServicesWeOffer = () => {
             </span>
           </motion.div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl text-[#b8c7e0] lg:text-6xl font-bold b8c7e0 mb-6">
             SERVICES
-            <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              WE OFFER
-            </span>
-          </h2>
+            <h1 className="block text-[#0bc0df] bg-clip-text">WE OFFER</h1>
+          </h1>
 
           <p className="max-w-2xl mx-auto text-lg text-gray-300">
             Comprehensive digital solutions designed to accelerate your business

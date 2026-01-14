@@ -25,9 +25,9 @@ const AboutUs = () => {
                 </h1>
               </div>
 
-              <h2 className="text-2xl lg:text-3xl xl:text-4xl font-semibold text-[#0bc0df] mb-6 leading-snug">
+              <h1 className="text-2xl lg:text-3xl xl:text-4xl font-semibold text-[#0bc0df] mb-6 leading-snug">
                 The Journey Of Rich System Solution
-              </h2>
+              </h1>
 
               <div className="space-y-4 text-[#e5edfc] text-lg leading-relaxed">
                 <p>

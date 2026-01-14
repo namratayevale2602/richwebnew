@@ -243,9 +243,9 @@ const DigitalMarketing = () => {
       {service.hero.features && (
         <section className="py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-[#b8c7e0] text-center mb-8">
+            <h1 className="text-3xl font-bold text-[#b8c7e0] text-center mb-8">
               What We Deliver
-            </h2>
+            </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {service.hero.features.map((feature, index) => (
                 <motion.div
@@ -286,9 +286,9 @@ const DigitalMarketing = () => {
                   <Home className="h-8 w-8 text-[#127cc9]" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-[#b8c7e0]">
+                  <h1 className="text-3xl font-bold text-[#b8c7e0]">
                     {service.whatWeDeliver.title}
-                  </h2>
+                  </h1>
                   <p className="text-[#e5edfc] mt-2">
                     {service.whatWeDeliver.description}
                   </p>
@@ -348,9 +348,9 @@ const DigitalMarketing = () => {
                 <div className="p-3 bg-blue-50 rounded-xl border border-blue-100">
                   <Briefcase className="h-8 w-8 text-[#127cc9]" />
                 </div>
-                <h2 className="text-3xl font-bold text-[#b8c7e0]">
+                <h1 className="text-3xl font-bold text-[#b8c7e0]">
                   Comprehensive Solutions
-                </h2>
+                </h1>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -408,9 +408,9 @@ const DigitalMarketing = () => {
                   <BarChart3 className="h-8 w-8 text-[#127cc9]" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-[#b8c7e0]">
+                  <h1 className="text-3xl font-bold text-[#b8c7e0]">
                     {service.strategies.title}
-                  </h2>
+                  </h1>
                   <p className="text-[#e5edfc] mt-2">
                     {service.strategies.description}
                   </p>
@@ -477,9 +477,9 @@ const DigitalMarketing = () => {
                   <Calendar className="h-8 w-8 text-[#127cc9]" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-[#b8c7e0]">
+                  <h1 className="text-3xl font-bold text-[#b8c7e0]">
                     {service.process.title}
-                  </h2>
+                  </h1>
                   <p className="text-[#e5edfc] mt-2">
                     {service.process.description}
                   </p>
@@ -545,9 +545,9 @@ const DigitalMarketing = () => {
                   <TrendingUp className="h-8 w-8 text-[#127cc9]" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold text-[#b8c7e0]">
+                  <h1 className="text-3xl font-bold text-[#b8c7e0]">
                     {service.benefits.title}
-                  </h2>
+                  </h1>
                   <p className="text-[#e5edfc] mt-2">
                     {service.benefits.description}
                   </p>
@@ -598,9 +598,9 @@ const DigitalMarketing = () => {
               <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
                 <BarChart3 className="h-8 w-8 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-[#b8c7e0]">
+              <h1 className="text-3xl font-bold text-[#b8c7e0]">
                 Ready to Boost Your Marketing?
-              </h2>
+              </h1>
             </div>
 
             <p className="text-lg text-[#e5edfc] mb-8">

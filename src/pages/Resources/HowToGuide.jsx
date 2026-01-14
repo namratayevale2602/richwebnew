@@ -113,9 +113,9 @@ const HowToGuide = () => {
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl py-8">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="font-semibold text-3xl sm:text-4xl text-[#b8c7e0] mt-10 mb-6">
+          <h1 className="font-semibold text-3xl sm:text-4xl text-[#b8c7e0] mt-10 mb-6">
             Our Resources
-          </h2>
+          </h1>
 
           {loading ? (
             <div className="flex justify-center">
@@ -151,9 +151,9 @@ const HowToGuide = () => {
         {/* SMS Templates Section */}
         <div className="py-12">
           <div className="text-center mb-12">
-            <h2 className="font-semibold text-3xl sm:text-4xl text-[#b8c7e0] mb-6">
+            <h1 className="font-semibold text-3xl sm:text-4xl text-[#b8c7e0] mb-6">
               Ready-to-Use Bulk SMS Templates for Every Industry
-            </h2>
+            </h1>
             <p className="text-[#e5edfc] text-lg leading-relaxed max-w-4xl mx-auto">
               Our templates simplify the process of creating impactful messages,
               saving you time and effort while ensuring your campaigns resonate

@@ -199,9 +199,9 @@ const SoftDevList = () => {
                   className="bg-white/12 rounded-xl p-4"
                 >
                   <div className="flex text-[#e5edfc] items-center justify-center gap-2 mb-2">
-                    {stat.icon}
+                    <p>{stat.icon}</p>
                     <div className="text-2xl md:text-3xl font-bold text-[#e5edfc]">
-                      {stat.value}
+                      <p>{stat.value}</p>
                     </div>
                   </div>
                   <div className="text-sm text-white/80">{stat.label}</div>
@@ -344,9 +344,9 @@ const SoftDevList = () => {
       {/* Why Choose Us */}
       <section className="py-16 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#b8c7e0] text-center mb-12">
+          <h1 className="text-3xl font-bold text-[#b8c7e0] text-center mb-12">
             Why Choose Our Software Services?
-          </h2>
+          </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
@@ -397,13 +397,13 @@ const SoftDevList = () => {
       {/* CTA Section */}
       <section className="py-16 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-4xl font-bold text-[#b8c7e0] mb-6"
           >
             Need Custom Software Solutions?
-          </motion.h2>
+          </motion.h1>
           <p className="text-xl text-[#0bc0df] mb-8 max-w-3xl mx-auto">
             Can't find exactly what you need? Our team specializes in creating
             custom software solutions tailored to your specific business

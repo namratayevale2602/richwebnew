@@ -270,9 +270,9 @@ const SoftDev = () => {
         <section className="py-16 bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-[#b8c7e0] mb-6">
+              <h1 className="text-2xl md:text-4xl font-bold text-[#b8c7e0] mb-6">
                 {service.whatWeDeliver.title}
-              </h2>
+              </h1>
               <p className="md:text-lg text-[#0bc0df] max-w-3xl mx-auto">
                 {service.whatWeDeliver.description}
               </p>
@@ -329,9 +329,9 @@ const SoftDev = () => {
         <section className="py-16 bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-[#e5edfc] mb-6">
+              <h1 className="text-2xl md:text-4xl font-bold text-[#e5edfc] mb-6">
                 {service.process.title}
-              </h2>
+              </h1>
               <p className="md:text-lg text-[#0bc0df] max-w-3xl mx-auto">
                 {service.process.description}
               </p>
@@ -409,9 +409,9 @@ const SoftDev = () => {
         <section className="py-16 bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-[#e5edfc] mb-6">
+              <h1 className="text-2xl md:text-4xl font-bold text-[#e5edfc] mb-6">
                 {service.benefits.title}
-              </h2>
+              </h1>
               <p className="text-lg text-[#0bc0df] max-w-3xl mx-auto">
                 {service.benefits.description}
               </p>
@@ -451,9 +451,9 @@ const SoftDev = () => {
       <section className="py-16 bg-trransparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#b8c7e0] mb-6">
+            <h1 className="text-2xl md:text-4xl font-bold text-[#b8c7e0] mb-6">
               Ready to Get Started?
-            </h2>
+            </h1>
             <p className="md:text-lg text-[#0bc0df] max-w-3xl mx-auto">
               Contact us today for a free consultation and let's build something
               amazing together.
@@ -594,13 +594,13 @@ const SoftDev = () => {
       {/* CTA Section */}
       <section className="py-16 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-4xl font-bold text-[#b8c7e0] mb-6"
           >
             Ready to Transform Your Business?
-          </motion.h2>
+          </motion.h1>
           <p className="text-xl text-[#0bc0df] mb-8 max-w-3xl mx-auto">
             Let's discuss your project and create a solution that exceeds your
             expectations.

@@ -344,9 +344,9 @@ const Hero = () => {
             animate={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           ></motion.div>
-          <span className="text-xs font-medium text-blue-700">
+          <p className="text-xs font-medium text-blue-700">
             Transform Your Digital Presence
-          </span>
+          </p>
         </motion.div>
 
         <motion.h1
@@ -355,9 +355,9 @@ const Hero = () => {
         >
           From Strategy to Software
           <br />
-          <motion.span className="bg-[#0bc0df] bg-clip-text text-transparent">
+          <motion.h1 className="bg-[#0bc0df] bg-clip-text text-transparent">
             We Build, Market & Scale
-          </motion.span>
+          </motion.h1>
         </motion.h1>
 
         <motion.p

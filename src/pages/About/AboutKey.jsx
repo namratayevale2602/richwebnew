@@ -88,9 +88,9 @@ const AboutKey = () => {
           <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
               <div className="w-full lg:w-1/2 fade-in opacity-0 translate-y-4 transition-all duration-500">
-                <h2 className="text-[#e5edfc] text-4xl lg:text-6xl font-semibold mb-3">
+                <h1 className="text-[#e5edfc] text-4xl lg:text-6xl font-semibold mb-3">
                   {about.title}
-                </h2>
+                </h1>
                 <h3 className="text-xl lg:text-2xl text-[#0bc0df] mb-4">
                   {about.subtitle}
                 </h3>
@@ -118,9 +118,9 @@ const AboutKey = () => {
           <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
             <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12">
               <div className="w-full lg:w-1/2 fade-in opacity-0 translate-y-4 transition-all duration-500">
-                <h2 className="text-[#e5edfc] text-4xl lg:text-6xl font-semibold mb-3 text-center">
+                <h1 className="text-[#e5edfc] text-4xl lg:text-6xl font-semibold mb-3 text-center">
                   {vision.title}
-                </h2>
+                </h1>
                 <p className="text-[#e5edfc] text-lg leading-relaxed">
                   {vision.description}
                 </p>
@@ -145,9 +145,9 @@ const AboutKey = () => {
           <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
               <div className="w-full lg:w-1/2 fade-in opacity-0 translate-y-4 transition-all duration-500">
-                <h2 className="text-[#e5edfc] text-4xl lg:text-6xl font-semibold mb-3">
+                <h1 className="text-[#e5edfc] text-4xl lg:text-6xl font-semibold mb-3">
                   {mission.title}
-                </h2>
+                </h1>
                 <p className="text-[#e5edfc] text-lg leading-relaxed">
                   {mission.description}
                 </p>
@@ -172,9 +172,9 @@ const AboutKey = () => {
           <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
             <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12">
               <div className="w-full lg:w-1/2 fade-in opacity-0 translate-y-4 transition-all duration-500">
-                <h2 className="text-[#e5edfc] text-4xl lg:text-6xl font-semibold mb-3">
+                <h1 className="text-[#e5edfc] text-4xl lg:text-6xl font-semibold mb-3">
                   {offer.title}
-                </h2>
+                </h1>
                 <h3 className="text-xl lg:text-2xl text-[#0bc0df] mb-4">
                   {offer.subtitle}
                 </h3>

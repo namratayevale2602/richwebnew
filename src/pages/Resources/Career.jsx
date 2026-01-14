@@ -171,9 +171,9 @@ const Career = () => {
 
       {/* Current Openings */}
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl w-full py-16">
-        <h2 className="text-3xl sm:text-4xl text-[#b8c7e0] font-bold text-center mb-12">
+        <h1 className="text-3xl sm:text-4xl text-[#b8c7e0] font-bold text-center mb-12">
           Current Openings
-        </h2>
+        </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {position.map((pos, i) => (
             <Position

@@ -103,11 +103,11 @@ const Blog = ({ img, title }) => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold text-[#b8c7e0] font-[Poppins] tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-[#b8c7e0] font-[Poppins] tracking-tight">
               BLOG &
               <br />
               INSIGHTS
-            </h2>
+            </h1>
 
             <motion.p
               className="text-lg leading-relaxed text-[#0bc0df] font-[Inter]"

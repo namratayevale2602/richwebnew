@@ -65,7 +65,7 @@ function Home() {
       </AnimatePresence>
       <Hero />
       <Products />
-      <ServiceCards />
+      {/* <ServiceCards /> */}
       <Counter />
       <TrustedClientSection />
       <ServicesWeOffer />

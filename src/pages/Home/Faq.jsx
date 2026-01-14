@@ -278,11 +278,11 @@ const Faq = ({ subpage = 0 }) => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold text-[#b8c7e0] mb-8 font-[Poppins] tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-[#b8c7e0] mb-8 font-[Poppins] tracking-tight">
               FREQUENTLY
               <br />
               ASKED QUESTIONS
-            </h2>
+            </h1>
           </motion.div>
         </div>
 
