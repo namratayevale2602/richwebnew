@@ -259,8 +259,8 @@ export function Types({ title, isActive, onClick }) {
       onClick={onClick}
       className={`rounded-lg p-4 cursor-pointer transition-all duration-200 border ${
         isActive
-          ? "bg-blue-600 text-white border-blue-600 shadow-md"
-          : "bg-sky-50 text-gray-700 border-gray-200 hover:bg-blue-50 hover:border-blue-200"
+          ? "bg-blue-600/12 text-white border-gray-200 shadow-md"
+          : "bg-blue-600/12 text-white border-gray-200 hover:text-gray-800 hover:bg-blue-50 hover:border-blue-200"
       }`}
     >
       <div className="flex items-center">

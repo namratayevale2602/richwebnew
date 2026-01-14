@@ -745,12 +745,11 @@ const Navbar = () => {
             <motion.button
               onClick={handleCTAClick}
               className="ml-4 text-white px-6 py-2 rounded-lg font-semibold uppercase tracking-wider text-sm shadow-lg hover:shadow-xl transition-all"
-              style={{ backgroundColor: brandColor }}
               whileHover={{
                 scale: 1.05,
-                boxShadow: `0 5px 15px ${brandColor}40`,
                 backgroundColor: "#062a5e",
               }}
+              style={{ backgroundColor: "#062a5e" }}
               whileTap={{ scale: 0.98 }}
             >
               Get Free Consultation
@@ -759,7 +758,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="lg:hidden text-gray-800 focus:outline-none"
+            className="lg:hidden text-[#b8c7e0] focus:outline-none"
             onClick={toggleMenu}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -777,12 +776,12 @@ const Navbar = () => {
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
-            className="fixed inset-0 bg-white z-40 lg:hidden overflow-y-auto pt-20"
+            className="fixed inset-0 bg-[#10182b] z-40 lg:hidden overflow-y-auto"
           >
             <div className="max-w-7xl mx-auto px-6 py-4 flex justify-end">
               <button
                 onClick={closeAllMenus}
-                className="text-gray-800 p-2 rounded-full hover:bg-gray-100 transition-colors"
+                className="text-[#e5edfc] p-2 rounded-full hover:bg-gray-100 transition-colors"
                 aria-label="Close menu"
               >
                 <X className="h-6 w-6" />
@@ -798,7 +797,7 @@ const Navbar = () => {
                         navigate(item.path);
                         closeAllMenus();
                       }}
-                      className="flex items-center py-4 text-lg text-gray-800 font-semibold w-full text-left hover:text-[#07337a] transition-colors cursor-pointer"
+                      className="flex items-center py-4 text-lg text-[#b8c7e0] font-semibold w-full text-left hover:text-[#07337a] transition-colors cursor-pointer"
                     >
                       {item.label}
                     </div>
@@ -818,7 +817,7 @@ const Navbar = () => {
                             prev === department.label ? null : department.label
                           )
                         }
-                        className="flex-1 flex items-center py-4 text-lg text-gray-800 font-semibold hover:text-[#07337a] transition-colors text-left"
+                        className="flex-1 flex items-center py-4 text-lg text-[#b8c7e0] font-semibold hover:text-[#07337a] transition-colors text-left"
                       >
                         {department.label}
                       </button>
@@ -831,7 +830,7 @@ const Navbar = () => {
                         className="p-2"
                       >
                         <ChevronDown
-                          className={`h-4 w-4 transition-transform ${
+                          className={`h-4 w-4 text-[#b8c7e0] transition-transform ${
                             openDropdown === department.label
                               ? "rotate-180"
                               : ""
@@ -857,7 +856,7 @@ const Navbar = () => {
                                   navigate(service.path);
                                   closeAllMenus();
                                 }}
-                                className="block py-3 text-gray-600 hover:text-[#07337a] transition-colors cursor-pointer font-medium pl-4"
+                                className="block py-3 text-[#e5edfc] hover:text-[#07337a] transition-colors cursor-pointer font-medium pl-4"
                               >
                                 {service.label}
                               </div>
@@ -869,7 +868,7 @@ const Navbar = () => {
                                 navigate(department.path);
                                 closeAllMenus();
                               }}
-                              className="block py-3 text-[#07337a] font-semibold pl-4 cursor-pointer"
+                              className="block py-3 text-[#e5edfc] font-semibold pl-4 cursor-pointer"
                             >
                               View All {department.label} Services →
                             </div>
@@ -890,7 +889,7 @@ const Navbar = () => {
                       navigate(contactItem.path);
                       closeAllMenus();
                     }}
-                    className="flex items-center py-4 text-lg text-gray-800 font-semibold w-full text-left hover:text-[#07337a] transition-colors cursor-pointer"
+                    className="flex items-center py-4 text-lg text-[#b8c7e0] font-semibold w-full text-left hover:text-[#07337a] transition-colors cursor-pointer"
                   >
                     {contactItem.label}
                   </div>
@@ -898,37 +897,36 @@ const Navbar = () => {
               </div>
 
               {/* Mobile CTA */}
-              <div className="mt-8">
+              <div className="mt-5">
                 <button
                   onClick={handleMobileCTAClick}
-                  className="block w-full text-white px-6 py-4 rounded-lg font-semibold uppercase tracking-wider text-center text-lg shadow-lg transition-all"
-                  style={{ backgroundColor: brandColor }}
+                  className="block bg-[#073379] w-full text-white px-6 py-4 rounded-lg font-semibold uppercase tracking-wider text-center text-lg shadow-lg transition-all"
                 >
                   Get Free Consultation
                 </button>
               </div>
 
               {/* Mobile Contact Info */}
-              <div className="mt-8 p-4 bg-gray-50 rounded-lg">
-                <h3 className="font-semibold text-gray-900 mb-3 text-lg">
+              <div className="mt-8 p-4 bg-white/12 rounded-lg">
+                <h3 className="font-semibold text-[#b8c7e0] mb-3 text-lg">
                   Contact Info
                 </h3>
                 <div className="space-y-4">
                   <a
                     href="tel:+919595902006"
-                    className="text-gray-700 hover:text-[#07337a] flex items-center transition-colors text-base"
+                    className="text-[#e5edfc] flex items-center transition-colors text-base"
                   >
                     <Phone size={18} className="mr-3" />
                     +91 95959 02006
                   </a>
                   <a
                     href="mailto:support@richsol.com"
-                    className="text-gray-700 hover:text-[#07337a] flex items-center transition-colors text-base"
+                    className="text-[#e5edfc] flex items-center transition-colors text-base"
                   >
                     <Mail size={18} className="mr-3" />
                     support@richsol.com
                   </a>
-                  <div className="text-gray-700 flex items-start">
+                  <div className="text-[#e5edfc] flex items-start">
                     <MapPin size={18} className="mr-3 mt-1 flex-shrink-0" />
                     <span className="text-base">
                       4th Floor, Akravi Disha, Nashik, Maharashtra 422002

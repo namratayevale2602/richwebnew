@@ -98,7 +98,7 @@ const Blog = () => {
   }
 
   return (
-    <section className="flex items-center py-10 sm:py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+    <section className="flex items-center py-10 sm:py-16 lg:py-24 bg-transparent">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl w-full">
         {/* Section Header with Layout Switcher */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16">
@@ -109,12 +109,12 @@ const Blog = () => {
             viewport={{ once: true }}
             className="space-y-6 mb-8 lg:mb-0"
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-[Poppins] tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#b8c7e0] font-[Poppins] tracking-tight">
               BLOG &
               <br />
               INSIGHTS
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl font-[Inter] leading-relaxed">
+            <p className="text-lg text-[#e5edfc] max-w-2xl font-[Inter] leading-relaxed">
               {blogData.sectionDescription}
             </p>
           </motion.div>
@@ -124,7 +124,7 @@ const Blog = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex space-x-2 bg-white rounded-lg p-2 shadow-sm border"
+            className="flex space-x-2 bg-white/12 rounded-lg p-2 shadow-sm border"
           >
             {["masonry", "grid", "featured"].map((layout) => (
               <button
@@ -132,8 +132,8 @@ const Blog = () => {
                 onClick={() => setActiveLayout(layout)}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
                   activeLayout === layout
-                    ? "bg-blue-600 text-white shadow-md"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                    ? "bg-blue-600 text-[#e5edfc] shadow-md"
+                    : "text-[#e5edfc]  "
                 }`}
               >
                 {layout.charAt(0).toUpperCase() + layout.slice(1)}

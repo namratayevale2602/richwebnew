@@ -19,6 +19,7 @@ import ServicesWeOffer from "./ServicesWeOffer";
 import PackagesSection from "./PackagesSection";
 import Hero from "./Hero";
 import TrustedClientSection from "./TrustedClientSection";
+import ServiceCards from "./ServiceCards";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -64,6 +65,7 @@ function Home() {
       </AnimatePresence>
       <Hero />
       <Products />
+      <ServiceCards />
       <Counter />
       <TrustedClientSection />
       <ServicesWeOffer />

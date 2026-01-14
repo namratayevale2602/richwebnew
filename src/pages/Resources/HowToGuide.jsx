@@ -109,11 +109,11 @@ const HowToGuide = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl py-8">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="font-semibold text-3xl sm:text-4xl text-gray-900 mt-10 mb-6">
+          <h2 className="font-semibold text-3xl sm:text-4xl text-[#b8c7e0] mt-10 mb-6">
             Our Resources
           </h2>
 
@@ -126,7 +126,7 @@ const HowToGuide = () => {
               </div>
             </div>
           ) : (
-            <p className="text-gray-600 text-lg leading-relaxed max-w-4xl mx-auto">
+            <p className="text-[#e5edfc] text-lg leading-relaxed max-w-4xl mx-auto">
               {introduction[0]
                 ? introduction[0].introduction
                 : "Explore our comprehensive resources to help your business grow and succeed."}
@@ -151,10 +151,10 @@ const HowToGuide = () => {
         {/* SMS Templates Section */}
         <div className="py-12">
           <div className="text-center mb-12">
-            <h2 className="font-semibold text-3xl sm:text-4xl text-gray-900 mb-6">
+            <h2 className="font-semibold text-3xl sm:text-4xl text-[#b8c7e0] mb-6">
               Ready-to-Use Bulk SMS Templates for Every Industry
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed max-w-4xl mx-auto">
+            <p className="text-[#e5edfc] text-lg leading-relaxed max-w-4xl mx-auto">
               Our templates simplify the process of creating impactful messages,
               saving you time and effort while ensuring your campaigns resonate
               with your target audience. Whether you're running a marketing
@@ -187,7 +187,7 @@ export default HowToGuide;
 // Download Component
 export function Download({ title, subtitle, description, document, image }) {
   return (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+    <div className="bg-transparent rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
       <div className="flex flex-col lg:flex-row items-center gap-8 p-8">
         <div className="w-full lg:w-1/4 flex justify-center">
           <img
@@ -200,15 +200,15 @@ export function Download({ title, subtitle, description, document, image }) {
         </div>
 
         <div className="w-full lg:w-3/4">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl sm:text-3xl font-bold text-[#b8c7e0] mb-2">
             {title}
           </h1>
           {subtitle && (
-            <h2 className="text-xl text-blue-600 font-semibold mb-4">
+            <h2 className="text-xl text-[#0bc0df] font-semibold mb-4">
               {subtitle}
             </h2>
           )}
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-[#e5edfc] text-lg leading-relaxed mb-6">
             {description}
           </p>
           <a
@@ -229,12 +229,12 @@ export function Download({ title, subtitle, description, document, image }) {
 // Sample Component
 export function Sample({ title, description, link }) {
   return (
-    <div className="bg-gradient-to-br from-sky-100 to-blue-100 hover:from-blue-950 hover:to-blue-900 hover:text-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 border border-blue-200 hover:border-blue-800 cursor-pointer group">
+    <div className="bg-white/12 hover:from-blue-950 hover:to-blue-900 hover:text-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-6 border border-blue-200 hover:border-blue-800 cursor-pointer group">
       <div className="flex flex-col h-full">
-        <h2 className="card-title text-xl font-bold text-gray-900 group-hover:text-white mb-4">
+        <h2 className="card-title text-xl font-bold text-[#b8c7e0] mb-4">
           {title}
         </h2>
-        <p className="text-gray-600 group-hover:text-gray-200 leading-relaxed flex-grow mb-6">
+        <p className="text-[#e5edfc] leading-relaxed flex-grow mb-6">
           {description}
         </p>
 

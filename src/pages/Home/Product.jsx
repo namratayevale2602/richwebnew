@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef, useCallback } from "react";
 import {
   MessageSquare,
   Phone,
@@ -13,604 +12,697 @@ import {
   PhoneCall,
   Mail,
   Building,
-  Sparkles,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
-import {
-  alertsystems,
-  bulkemails,
-  bulksmss,
-  bulkvoicee,
-  designdevelopementt,
-  designmarketingg,
-  digitalautomationn,
-  graphicDesignn,
-  ivrr,
-  outdoormarketingg,
-  whatsappchatbots,
-  whatsappservices,
-} from "../../assets";
-
-// Complete Static JSON Data with all 12 services
-const productsData = {
-  sectionTitle: "Our Digital Services",
-  sectionDescription: "Comprehensive Solutions for Modern Business Needs",
-  products: [
-    {
-      id: 1,
-      title: "Bulk Sms",
-      product_name: "bulk-sms",
-      description:
-        "Reliable bulk SMS services for marketing campaigns, alerts, and notifications. Reach thousands instantly with our robust SMS platform.",
-      image: bulksmss,
-      icon: MessageSquare,
-      category: "Communication",
-      color: "from-blue-500 to-cyan-400",
-    },
-    {
-      id: 2,
-      title: "Bulk Voice",
-      product_name: "bulk-voice",
-      description:
-        "Professional bulk voice messaging services for customer engagement, alerts, and marketing campaigns with high delivery rates.",
-      image: bulkvoicee,
-      icon: Phone,
-      category: "Communication",
-      color: "from-purple-500 to-pink-400",
-    },
-    {
-      id: 3,
-      title: "Whatsapp Services",
-      product_name: "whatsapp-services",
-      description:
-        "Official WhatsApp Business API services for marketing, customer support, and automated messaging with high engagement rates.",
-      image: whatsappservices,
-      icon: Smartphone,
-      category: "Communication",
-      color: "from-green-500 to-emerald-400",
-    },
-    {
-      id: 4,
-      title: "Digital Marketing",
-      product_name: "digital-marketing",
-      description:
-        "Comprehensive digital marketing services including SEO, social media marketing, PPC, and content marketing to grow your business online.",
-      image: designmarketingg,
-      icon: Megaphone,
-      category: "Marketing",
-      color: "from-orange-500 to-red-400",
-    },
-    {
-      id: 5,
-      title: "Whatsapp Chatbot",
-      product_name: "whatsapp-chatbot",
-      description:
-        "Intelligent WhatsApp chatbots for customer service, lead generation, and automated conversations. 24/7 customer support solutions.",
-      image: whatsappchatbots,
-      icon: Bot,
-      category: "Automation",
-      color: "from-teal-500 to-cyan-400",
-    },
-    {
-      id: 6,
-      title: "Digital Automation",
-      product_name: "digital-automation",
-      description:
-        "Advanced automation solutions for business processes, workflow optimization, and operational efficiency improvement.",
-      image: digitalautomationn,
-      icon: Zap,
-      category: "Automation",
-      color: "from-indigo-500 to-purple-400",
-    },
-    {
-      id: 7,
-      title: "Design Development",
-      product_name: "design-development",
-      description:
-        "Professional website design, web development, and mobile app development services to establish your strong digital presence.",
-      image: designdevelopementt,
-      icon: Code,
-      category: "Development",
-      color: "from-violet-500 to-purple-400",
-    },
-    {
-      id: 8,
-      title: "Graphic Design",
-      product_name: "graphic-design",
-      description:
-        "Professional graphic design services including logos, branding, marketing materials, and digital graphics for your business.",
-      image: graphicDesignn,
-      icon: Palette,
-      category: "Creative",
-      color: "from-pink-500 to-rose-400",
-    },
-    {
-      id: 9,
-      title: "Alert System",
-      product_name: "alert-system",
-      description:
-        "Custom alert and notification systems for businesses. Real-time alerts via SMS, voice, email, and push notifications.",
-      image: alertsystems,
-      icon: AlertCircle,
-      category: "Automation",
-      color: "from-amber-500 to-yellow-400",
-    },
-    {
-      id: 10,
-      title: "Ivr System",
-      product_name: "ivr-system",
-      description:
-        "Professional IVR system development for call centers and businesses. Automate customer interactions and improve call management.",
-      image: ivrr,
-      icon: PhoneCall,
-      category: "Communication",
-      color: "from-sky-500 to-blue-400",
-    },
-    {
-      id: 11,
-      title: "Bulk Email",
-      product_name: "bulk-email",
-      description:
-        "Professional bulk email marketing services for newsletters, promotions, and customer engagement campaigns with high deliverability rates.",
-      image: bulkemails,
-      icon: Mail,
-      category: "Marketing",
-      color: "from-red-500 to-orange-400",
-    },
-    {
-      id: 12,
-      title: "Outdoor Marketing",
-      product_name: "outdoor-marketing",
-      description:
-        "Comprehensive outdoor marketing services including hoardings, billboards, transit ads, and OOH advertising for maximum brand visibility.",
-      image: outdoormarketingg,
-      icon: Building,
-      category: "Marketing",
-      color: "from-gray-600 to-gray-400",
-    },
-  ],
-};
+import audioFile from "../../assets/sound/flipcard.mp3";
 
 const Products = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleCards, setVisibleCards] = useState([]);
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
-  const autoSlideRef = useRef(null);
-  const totalProducts = productsData.products.length;
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const [hasPlayedIntroSound, setHasPlayedIntroSound] = useState(false);
+  const [isAudioReady, setIsAudioReady] = useState(false);
+  const autoPlayRef = useRef(null);
+  const audioRef = useRef(null);
+  const componentRef = useRef(null);
+  const observerRef = useRef(null);
+  const touchStartX = useRef(0);
+  const cardsPerView = 5;
 
-  // Detect screen size for responsive adjustments
+  // Initialize audio - SIMPLIFIED VERSION
   useEffect(() => {
-    const checkScreenSize = () => {
-      const width = window.innerWidth;
-      setIsMobile(width < 768);
-      setIsTablet(width >= 768 && width < 1024);
-    };
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
-
-  // Get visible cards based on screen size
-  const getVisibleCards = (index) => {
-    const cards = [];
-
-    // Adjust number of visible cards based on screen size
-    let halfWindow;
-    if (isMobile) {
-      halfWindow = 1; // Show 1 card on each side for mobile (3 total)
-    } else if (isTablet) {
-      halfWindow = 1; // Show 1 card on each side for tablet (3 total)
-    } else {
-      halfWindow = 2; // Show 2 cards on each side for desktop (5 total)
+    try {
+      audioRef.current = new Audio(audioFile);
+      audioRef.current.volume = 0.3;
+      audioRef.current.preload = "auto";
+      setIsAudioReady(true);
+    } catch (error) {
+      console.log("Audio initialization failed:", error);
+      setIsAudioReady(false);
     }
-
-    for (let i = index - halfWindow; i <= index + halfWindow; i++) {
-      let cardIndex = i;
-      if (i < 0) {
-        cardIndex = totalProducts + i;
-      } else if (i >= totalProducts) {
-        cardIndex = i % totalProducts;
-      }
-      cards.push({
-        ...productsData.products[cardIndex],
-        position: i - index,
-      });
-    }
-    return cards;
-  };
-
-  useEffect(() => {
-    setVisibleCards(getVisibleCards(currentIndex));
-  }, [currentIndex, isMobile, isTablet]);
-
-  // Auto slider functionality
-  useEffect(() => {
-    if (autoSlideRef.current) {
-      clearInterval(autoSlideRef.current);
-    }
-
-    autoSlideRef.current = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalProducts);
-    }, 5000); // Change slide every 5 seconds
 
     return () => {
-      if (autoSlideRef.current) {
-        clearInterval(autoSlideRef.current);
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
       }
     };
-  }, [totalProducts]);
+  }, []);
 
-  const nextSlide = () => {
-    if (autoSlideRef.current) {
-      clearInterval(autoSlideRef.current);
-    }
-    setCurrentIndex((prev) => (prev + 1) % totalProducts);
+  // SIMPLIFIED Intersection Observer - only track visibility
+  useEffect(() => {
+    if (!componentRef.current) return;
 
-    // Restart auto slider after manual navigation
-    autoSlideRef.current = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalProducts);
-    }, 5000);
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsInView(entry.isIntersecting);
+
+        // Play intro sound when component comes into view (first time)
+        if (entry.isIntersecting && !hasPlayedIntroSound && isAudioReady) {
+          setTimeout(() => {
+            try {
+              if (audioRef.current) {
+                audioRef.current.currentTime = 0;
+                audioRef.current.volume = 0.2;
+                audioRef.current
+                  .play()
+                  .then(() => {
+                    setHasPlayedIntroSound(true);
+                  })
+                  .catch((error) => {
+                    console.log("Intro audio play failed:", error);
+                    setHasPlayedIntroSound(true);
+                  });
+              }
+            } catch (error) {
+              console.log("Intro audio error:", error);
+              setHasPlayedIntroSound(true);
+            }
+          }, 500);
+        }
+      },
+      {
+        threshold: 0.1, // Only 10% needs to be visible
+        rootMargin: "50px", // Add some margin
+      }
+    );
+
+    observerRef.current.observe(componentRef.current);
+
+    return () => {
+      if (observerRef.current && componentRef.current) {
+        observerRef.current.unobserve(componentRef.current);
+      }
+    };
+  }, [hasPlayedIntroSound, isAudioReady]);
+
+  // Products data with local images or fallback URLs
+  const productsData = {
+    sectionTitle: "Our Digital Services",
+    sectionDescription: "Comprehensive Solutions for Modern Business Needs",
+    products: [
+      {
+        id: 1,
+        title: "Bulk SMS",
+        product_name: "bulk-sms",
+        description:
+          "Reliable bulk SMS services for marketing campaigns, alerts, and notifications. Reach thousands instantly with our robust SMS platform.",
+        image:
+          "https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?q=80&w=1374&auto=format&fit=crop",
+        icon: MessageSquare,
+        category: "Communication",
+        color: "from-blue-500 to-cyan-400",
+        bgColor: "bg-gradient-to-br from-blue-500/20 to-cyan-400/20",
+      },
+      {
+        id: 2,
+        title: "Bulk Voice",
+        product_name: "bulk-voice",
+        description:
+          "Professional bulk voice messaging services for customer engagement, alerts, and marketing campaigns with high delivery rates.",
+        image:
+          "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?q=80&w=1470&auto=format&fit=crop",
+        icon: Phone,
+        category: "Communication",
+        color: "from-purple-500 to-pink-400",
+        bgColor: "bg-gradient-to-br from-purple-500/20 to-pink-400/20",
+      },
+      {
+        id: 3,
+        title: "WhatsApp Services",
+        product_name: "whatsapp-services",
+        description:
+          "Official WhatsApp Business API services for marketing, customer support, and automated messaging with high engagement rates.",
+        image:
+          "https://images.unsplash.com/photo-1611605698335-8b1569810432?q=80&w=1374&auto=format&fit=crop",
+        icon: Smartphone,
+        category: "Communication",
+        color: "from-green-500 to-emerald-400",
+        bgColor: "bg-gradient-to-br from-green-500/20 to-emerald-400/20",
+      },
+      {
+        id: 4,
+        title: "Digital Marketing",
+        product_name: "digital-marketing",
+        description:
+          "Comprehensive digital marketing services including SEO, social media marketing, PPC, and content marketing to grow your business online.",
+        image:
+          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop",
+        icon: Megaphone,
+        category: "Marketing",
+        color: "from-orange-500 to-red-400",
+        bgColor: "bg-gradient-to-br from-orange-500/20 to-red-400/20",
+      },
+      {
+        id: 5,
+        title: "WhatsApp Chatbot",
+        product_name: "whatsapp-chatbot",
+        description:
+          "Intelligent WhatsApp chatbots for customer service, lead generation, and automated conversations. 24/7 customer support solutions.",
+        image:
+          "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1469&auto=format&fit=crop",
+        icon: Bot,
+        category: "Automation",
+        color: "from-teal-500 to-cyan-400",
+        bgColor: "bg-gradient-to-br from-teal-500/20 to-cyan-400/20",
+      },
+      {
+        id: 6,
+        title: "Digital Automation",
+        product_name: "digital-automation",
+        description:
+          "Advanced automation solutions for business processes, workflow optimization, and operational efficiency improvement.",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1374&auto=format&fit=crop",
+        icon: Zap,
+        category: "Automation",
+        color: "from-indigo-500 to-purple-400",
+        bgColor: "bg-gradient-to-br from-indigo-500/20 to-purple-400/20",
+      },
+      {
+        id: 7,
+        title: "Design & Development",
+        product_name: "design-development",
+        description:
+          "Professional website design, web development, and mobile app development services to establish your strong digital presence.",
+        image:
+          "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1374&auto=format&fit=crop",
+        icon: Code,
+        category: "Development",
+        color: "from-violet-500 to-purple-400",
+        bgColor: "bg-gradient-to-br from-violet-500/20 to-purple-400/20",
+      },
+      {
+        id: 8,
+        title: "Graphic Design",
+        product_name: "graphic-design",
+        description:
+          "Professional graphic design services including logos, branding, marketing materials, and digital graphics for your business.",
+        image:
+          "https://images.unsplash.com/photo-1634942537034-2531766767d1?q=80&w=1528&auto=format&fit=crop",
+        icon: Palette,
+        category: "Creative",
+        color: "from-pink-500 to-rose-400",
+        bgColor: "bg-gradient-to-br from-pink-500/20 to-rose-400/20",
+      },
+      {
+        id: 9,
+        title: "Alert System",
+        product_name: "alert-system",
+        description:
+          "Custom alert and notification systems for businesses. Real-time alerts via SMS, voice, email, and push notifications.",
+        image:
+          "https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=1469&auto=format&fit=crop",
+        icon: AlertCircle,
+        category: "Automation",
+        color: "from-amber-500 to-yellow-400",
+        bgColor: "bg-gradient-to-br from-amber-500/20 to-yellow-400/20",
+      },
+      {
+        id: 10,
+        title: "IVR System",
+        product_name: "ivr-system",
+        description:
+          "Professional IVR system development for call centers and businesses. Automate customer interactions and improve call management.",
+        image:
+          "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1470&auto=format&fit=crop",
+        icon: PhoneCall,
+        category: "Communication",
+        color: "from-sky-500 to-blue-400",
+        bgColor: "bg-gradient-to-br from-sky-500/20 to-blue-400/20",
+      },
+      {
+        id: 11,
+        title: "Bulk Email",
+        product_name: "bulk-email",
+        description:
+          "Professional bulk email marketing services for newsletters, promotions, and customer engagement campaigns with high deliverability rates.",
+        image:
+          "https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=1470&auto=format&fit=crop",
+        icon: Mail,
+        category: "Marketing",
+        color: "from-red-500 to-orange-400",
+        bgColor: "bg-gradient-to-br from-red-500/20 to-orange-400/20",
+      },
+      {
+        id: 12,
+        title: "Outdoor Marketing",
+        product_name: "outdoor-marketing",
+        description:
+          "Comprehensive outdoor marketing services including hoardings, billboards, transit ads, and OOH advertising for maximum brand visibility.",
+        image:
+          "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=1525&auto=format&fit=crop",
+        icon: Building,
+        category: "Marketing",
+        color: "from-gray-600 to-gray-400",
+        bgColor: "bg-gradient-to-br from-gray-600/20 to-gray-400/20",
+      },
+    ],
   };
 
-  const prevSlide = () => {
-    if (autoSlideRef.current) {
-      clearInterval(autoSlideRef.current);
+  // Get visible cards for the carousel
+  const getVisibleCards = useCallback(() => {
+    const total = productsData.products.length;
+    if (total === 0) return [];
+
+    const cards = [];
+    const halfView = Math.floor(cardsPerView / 2);
+
+    for (let i = -halfView; i <= halfView; i++) {
+      let index = currentIndex + i;
+      if (index < 0) index = total + index;
+      if (index >= total) index = index - total;
+      cards.push({
+        ...productsData.products[index],
+        position: i,
+        isCenter: i === 0,
+      });
     }
-    setCurrentIndex((prev) => (prev - 1 + totalProducts) % totalProducts);
 
-    // Restart auto slider after manual navigation
-    autoSlideRef.current = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalProducts);
-    }, 5000);
-  };
+    return cards;
+  }, [currentIndex, productsData.products]);
 
-  const goToSlide = (index) => {
-    if (autoSlideRef.current) {
-      clearInterval(autoSlideRef.current);
+  const visibleCards = getVisibleCards();
+
+  const playSlideSound = useCallback(() => {
+    if (audioRef.current && isInView) {
+      try {
+        audioRef.current.currentTime = 0;
+        audioRef.current.volume = 0.3;
+        audioRef.current.play().catch((error) => {
+          console.log("Slide audio play failed:", error);
+        });
+      } catch (error) {
+        console.log("Slide audio error:", error);
+      }
     }
-    setCurrentIndex(index);
+  }, [isInView]);
 
-    // Restart auto slider after manual navigation
-    autoSlideRef.current = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalProducts);
-    }, 5000);
-  };
+  const nextSlide = useCallback(() => {
+    if (isAnimating) return;
+
+    setIsAnimating(true);
+    playSlideSound();
+
+    setTimeout(() => {
+      setCurrentIndex((prev) =>
+        prev === productsData.products.length - 1 ? 0 : prev + 1
+      );
+      setIsAnimating(false);
+    }, 300);
+  }, [isAnimating, productsData.products.length, playSlideSound]);
+
+  const prevSlide = useCallback(() => {
+    if (isAnimating) return;
+
+    setIsAnimating(true);
+    playSlideSound();
+
+    setTimeout(() => {
+      setCurrentIndex((prev) =>
+        prev === 0 ? productsData.products.length - 1 : prev - 1
+      );
+      setIsAnimating(false);
+    }, 300);
+  }, [isAnimating, productsData.products.length, playSlideSound]);
+
+  const goToSlide = useCallback(
+    (index) => {
+      if (isAnimating || index === currentIndex) return;
+
+      setIsAnimating(true);
+      playSlideSound();
+
+      setTimeout(() => {
+        setCurrentIndex(index);
+        setIsAnimating(false);
+      }, 300);
+    },
+    [isAnimating, currentIndex, playSlideSound]
+  );
+
+  // Touch and mouse handlers
+  const handleTouchStart = useCallback((e) => {
+    touchStartX.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (e) => {
+      if (!touchStartX.current) return;
+
+      const touchEndX = e.changedTouches[0].clientX;
+      const diff = touchStartX.current - touchEndX;
+
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+
+      touchStartX.current = 0;
+    },
+    [nextSlide, prevSlide]
+  );
+
+  const handleMouseDown = useCallback(
+    (e) => {
+      touchStartX.current = e.clientX;
+
+      const handleMouseMove = (e) => {
+        if (!touchStartX.current) return;
+        e.preventDefault();
+      };
+
+      const handleMouseUp = (e) => {
+        if (!touchStartX.current) return;
+
+        const touchEndX = e.clientX;
+        const diff = touchStartX.current - touchEndX;
+
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) {
+            nextSlide();
+          } else {
+            prevSlide();
+          }
+        }
+
+        touchStartX.current = 0;
+        document.removeEventListener("mousemove", handleMouseMove);
+        document.removeEventListener("mouseup", handleMouseUp);
+      };
+
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+    },
+    [nextSlide, prevSlide]
+  );
+
+  // Auto-play - only when in view
+  useEffect(() => {
+    if (isAutoPlaying && !isAnimating && isInView) {
+      autoPlayRef.current = setInterval(() => {
+        nextSlide();
+      }, 4000);
+    } else if (autoPlayRef.current) {
+      clearInterval(autoPlayRef.current);
+    }
+
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+    };
+  }, [isAutoPlaying, isAnimating, nextSlide, isInView]);
+
+  const toggleAutoPlay = useCallback(() => {
+    setIsAutoPlaying(!isAutoPlaying);
+  }, [isAutoPlaying]);
+
+  // Fix for card visibility - ensure they render properly
+  if (!productsData.products || productsData.products.length === 0) {
+    return (
+      <section className="relative py-16 bg-transparent overflow-hidden">
+        <div className="text-center text-white">No products available</div>
+      </section>
+    );
+  }
 
   return (
-    <div className="w-full px-4 sm:px-6 lg:px-8 py-16 bg-transparent">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-8 lg:mb-12"
-        >
-          <motion.div
-            initial={{ scale: 0.5, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-900/20 to-cyan-900/20 rounded-full mb-4 lg:mb-6 border border-blue-500/30"
-          >
-            <Sparkles className="w-4 h-4 text-cyan-400" />
-            <span className="text-sm font-semibold text-cyan-300">
-              Our Services
-            </span>
-          </motion.div>
+    <section
+      ref={componentRef}
+      className="relative py-16 bg-transparent overflow-hidden"
+    >
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:20px_20px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/5 to-transparent" />
 
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#b8c7e0] lg:text-5xl mb-4 lg:mb-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#b8c7e0] mb-4">
             {productsData.sectionTitle}
-            <span className="block bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-xl sm:text-2xl lg:text-3xl">
-              {productsData.sectionDescription}
-            </span>
           </h2>
-
-          <p className="max-w-2xl mx-auto text-sm sm:text-base lg:text-lg text-gray-300 px-4">
-            Discover our comprehensive range of digital solutions designed to
-            accelerate your business growth
+          <p className="text-xl text-[#0bc0df] max-w-3xl mx-auto">
+            {productsData.sectionDescription}
           </p>
-        </motion.div>
+        </div>
 
-        {/* Slider Container - Responsive height */}
-        <div
-          className={`relative w-full ${
-            isMobile
-              ? "h-[500px]"
-              : isTablet
-              ? "h-[550px]"
-              : "h-[600px] lg:h-[700px]"
-          }`}
-        >
-          {/* Navigation Buttons - Responsive positioning */}
+        {/* Carousel Container */}
+        <div className="relative">
+          {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className={`absolute ${
-              isMobile ? "left-2" : "left-4 lg:left-8"
-            } top-1/2 -translate-y-1/2 z-30 p-2 sm:p-3 rounded-full bg-gray-800/80 backdrop-blur-sm border border-gray-700 hover:bg-gray-700/90 transition-all duration-300 hover:scale-110 group`}
+            disabled={isAnimating}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-20 p-3 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 hover:bg-black/70 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 group"
           >
-            <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-300 group-hover:text-white" />
+            <div className="w-6 h-6 text-white group-hover:scale-110 transition-transform">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </div>
           </button>
 
           <button
             onClick={nextSlide}
-            className={`absolute ${
-              isMobile ? "right-2" : "right-4 lg:right-8"
-            } top-1/2 -translate-y-1/2 z-30 p-2 sm:p-3 rounded-full bg-gray-800/80 backdrop-blur-sm border border-gray-700 hover:bg-gray-700/90 transition-all duration-300 hover:scale-110 group`}
+            disabled={isAnimating}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 z-20 p-3 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 hover:bg-black/70 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 group"
           >
-            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-gray-300 group-hover:text-white" />
+            <div className="w-6 h-6 text-white group-hover:scale-110 transition-transform">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </div>
           </button>
 
+          {/* Auto-play Toggle */}
+          {/* <div className="absolute -top-16 right-4 z-20">
+            <button
+              onClick={toggleAutoPlay}
+              className={`px-4 py-2 rounded-full backdrop-blur-sm border border-white/10 transition-all duration-300 ${
+                isAutoPlaying
+                  ? "bg-green-500/20 text-green-400 hover:bg-green-500/30"
+                  : "bg-red-500/20 text-red-400 hover:bg-red-500/30"
+              }`}
+            >
+              {isAutoPlaying ? "⏸️ Pause" : "▶️ Play"}
+            </button>
+          </div> */}
+
           {/* Cards Container */}
-          <div className="relative w-full h-full flex items-center justify-center">
-            <AnimatePresence>
-              {visibleCards.map((card, index) => (
-                <ProductCard
-                  key={`${card.id}-${card.position}`}
-                  product={card}
-                  position={card.position}
-                  isActive={card.position === 0}
-                  isMobile={isMobile}
-                  isTablet={isTablet}
-                  onClick={() => {
-                    const targetIndex =
-                      (currentIndex + card.position + totalProducts) %
-                      totalProducts;
-                    goToSlide(targetIndex);
-                  }}
-                />
-              ))}
-            </AnimatePresence>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Product Card Component
-const ProductCard = ({
-  product,
-  position,
-  isActive,
-  isMobile,
-  isTablet,
-  onClick,
-}) => {
-  const IconComponent = product.icon;
-
-  const getCardStyle = () => {
-    if (isMobile) {
-      const mobileStyles = {
-        0: "scale-110 z-30", // Center card (active)
-        "-1": "-translate-x-[120%] translate-y-8 rotate-[-12deg] scale-85 opacity-70 z-20",
-        1: "translate-x-[120%] translate-y-8 rotate-[12deg] scale-85 opacity-70 z-20",
-      };
-      return mobileStyles[position] || "";
-    } else if (isTablet) {
-      const tabletStyles = {
-        0: "scale-120 z-30", // Center card (active)
-        "-1": "-translate-x-[100%] translate-y-6 rotate-[-10deg] scale-90 opacity-75 z-20",
-        1: "translate-x-[100%] translate-y-6 rotate-[10deg] scale-90 opacity-75 z-20",
-      };
-      return tabletStyles[position] || "";
-    } else {
-      const desktopStyles = {
-        0: "scale-125 z-30", // Center card (active)
-        "-2": "-translate-x-[140%] translate-y-10 rotate-[-15deg] scale-75 opacity-70 z-10",
-        "-1": "-translate-x-[70%] translate-y-5 rotate-[-8deg] scale-90 opacity-80 z-20",
-        1: "translate-x-[70%] translate-y-5 rotate-[8deg] scale-90 opacity-80 z-20",
-        2: "translate-x-[140%] translate-y-10 rotate-[15deg] scale-75 opacity-70 z-10",
-      };
-      return desktopStyles[position] || "";
-    }
-  };
-
-  const getCardSize = () => {
-    if (isMobile) {
-      if (isActive) {
-        return "w-[240px] h-[350px] cursor-default";
-      }
-      return "w-[220px] h-[320px] cursor-pointer";
-    } else if (isTablet) {
-      if (isActive) {
-        return "w-[300px] h-[440px] cursor-default";
-      }
-      return "w-[260px] h-[380px] cursor-pointer";
-    } else {
-      if (isActive) {
-        return "w-[250px] h-[400px] cursor-default";
-      }
-      return "w-[300px] h-[420px] cursor-pointer";
-    }
-  };
-
-  const getCardPosition = (pos) => {
-    if (isMobile) {
-      switch (pos) {
-        case -1:
-          return "-120%";
-        case 0:
-          return "0%";
-        case 1:
-          return "120%";
-        default:
-          return "0%";
-      }
-    } else if (isTablet) {
-      switch (pos) {
-        case -1:
-          return "-100%";
-        case 0:
-          return "0%";
-        case 1:
-          return "100%";
-        default:
-          return "0%";
-      }
-    } else {
-      switch (pos) {
-        case -2:
-          return "-140%";
-        case -1:
-          return "-70%";
-        case 0:
-          return "0%";
-        case 1:
-          return "70%";
-        case 2:
-          return "140%";
-        default:
-          return "0%";
-      }
-    }
-  };
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8, x: position > 0 ? 100 : -100 }}
-      animate={{
-        opacity: isActive ? 1 : isMobile ? 0.6 : 0.7,
-        scale: isActive
-          ? isMobile
-            ? 1.1
-            : isTablet
-            ? 1.2
-            : 1.25
-          : position === 2 || position === -2
-          ? 0.75
-          : position === 1 || position === -1
-          ? 0.85
-          : 0.9,
-        x: getCardPosition(position),
-        rotate: isActive
-          ? 0
-          : isMobile
-          ? (position < 0 ? -12 : 12) * Math.abs(position)
-          : isTablet
-          ? (position < 0 ? -10 : 10) * Math.abs(position)
-          : (position < 0 ? -8 : 8) * Math.abs(position),
-      }}
-      exit={{ opacity: 0, scale: 0.8 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`absolute ${getCardSize()} ${getCardStyle()} transition-all duration-500`}
-      onClick={!isActive ? onClick : undefined}
-    >
-      <div
-        className={`relative w-full h-full rounded-2xl overflow-hidden ${
-          isActive
-            ? "bg-gradient-to-br from-gray-800 to-gray-900  shadow-2xl shadow-cyan-500/20"
-            : "bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-gray-700/50 shadow-xl"
-        }`}
-      >
-        {/* Cross overlay for side cards */}
-        {!isActive && (
-          <div className="absolute inset-0 z-40 flex items-center justify-center backdrop-blur-[0.2px]">
-            <div
-              className={`relative ${
-                isMobile ? "w-16 h-16" : "w-20 h-20 lg:w-24 lg:h-24"
-              }`}
-            ></div>
-          </div>
-        )}
-
-        {/* Card Content */}
-        <div className="relative z-10 p-4 sm:p-5 lg:p-3 h-full flex flex-col">
           <div
-            className={`mb-3 lg:mb-4 overflow-hidden rounded-xl ${
-              isActive
-                ? isMobile
-                  ? "h-36"
-                  : isTablet
-                  ? "h-40"
-                  : "h-48"
-                : isMobile
-                ? "h-24"
-                : isTablet
-                ? "h-28"
-                : "h-32"
-            }`}
+            className="flex items-center justify-center min-h-[600px] md:min-h-[700px] px-8 md:px-12"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            onMouseDown={handleMouseDown}
           >
-            <img
-              src={product.image}
-              alt={product.title}
-              className={`w-full h-full object-contain transition-transform duration-500 ${
-                isActive ? "group-hover:scale-110" : ""
-              }`}
-            />
+            <div className="flex items-center justify-center gap-4 md:gap-8">
+              {visibleCards.map((product, index) => {
+                const Icon = product.icon;
+                const position = product.position;
+                const isCenter = product.isCenter;
+
+                // Calculate scale and opacity based on position
+                const absPosition = Math.abs(position);
+                const scale = 1 - absPosition * 0.1;
+                const opacity = 1 - absPosition * 0.3;
+                const zIndex = 10 - absPosition;
+
+                return (
+                  <div
+                    key={`${product.id}-${index}`}
+                    className={`
+                      relative transition-all duration-500 ease-out
+                      ${isAnimating ? "transition-all duration-300" : ""}
+                      ${
+                        isCenter
+                          ? "cursor-default"
+                          : "cursor-pointer hover:scale-95"
+                      }
+                    `}
+                    style={{
+                      transform: `scale(${scale})`,
+                      opacity: opacity,
+                      zIndex: zIndex,
+                      width: isCenter ? "320px" : "220px",
+                      maxWidth: isCenter ? "320px" : "220px",
+                      transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+                    }}
+                    onClick={() =>
+                      !isCenter &&
+                      goToSlide(
+                        (currentIndex +
+                          position +
+                          productsData.products.length) %
+                          productsData.products.length
+                      )
+                    }
+                  >
+                    {/* Card */}
+                    <div
+                      className={`
+                      relative rounded-3xl overflow-hidden
+                      ${
+                        isCenter
+                          ? "h-[500px] shadow-2xl"
+                          : "h-[400px] shadow-xl"
+                      }
+                      border border-white/10
+                      transition-all duration-500
+                      ${isAnimating && isCenter ? "shadow-blue-500/30" : ""}
+                    `}
+                    >
+                      {/* Gradient Background */}
+                      <div className={`absolute inset-0 ${product.bgColor}`} />
+
+                      {/* Image */}
+                      <div className="relative h-1/2 overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                          onError={(e) => {
+                            e.target.src = `https://source.unsplash.com/random/800x600/?${product.category}`;
+                          }}
+                        />
+                        {/* Animation overlay during transition */}
+                        {isCenter && isAnimating && (
+                          <div className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent animate-pulse" />
+                        )}
+                      </div>
+
+                      {/* Content */}
+                      <div className="relative h-1/2 p-6 bg-gradient-to-b from-black/90 to-black">
+                        {/* Icon and Category */}
+                        <div className="flex items-center justify-between mb-4">
+                          <div
+                            className={`p-3 rounded-2xl transition-all duration-300 ${
+                              isCenter ? "bg-white/20" : "bg-white/10"
+                            } ${
+                              isCenter && isAnimating
+                                ? "scale-110 rotate-3"
+                                : ""
+                            }`}
+                          >
+                            <Icon
+                              className={`w-6 h-6 transition-all duration-300 ${
+                                isCenter ? "text-white" : "text-white/80"
+                              }`}
+                            />
+                          </div>
+                          <span
+                            className={`text-xs font-semibold px-3 py-1 rounded-full transition-all duration-300 ${
+                              isCenter
+                                ? "bg-white/20 text-white"
+                                : "bg-white/10 text-white/70"
+                            } ${isCenter && isAnimating ? "scale-105" : ""}`}
+                          >
+                            {product.category}
+                          </span>
+                        </div>
+
+                        {/* Title and Description */}
+                        <div className="mb-4">
+                          <h3
+                            className={`font-bold mb-2 transition-all duration-300 ${
+                              isCenter
+                                ? "text-xl text-white"
+                                : "text-lg text-white/90"
+                            } ${isCenter && isAnimating ? "text-2xl" : ""}`}
+                          >
+                            {product.title}
+                          </h3>
+                          <p
+                            className={`transition-all duration-300 ${
+                              isCenter
+                                ? "text-sm text-gray-300"
+                                : "text-xs text-gray-400"
+                            } line-clamp-3`}
+                          >
+                            {product.description}
+                          </p>
+                        </div>
+
+                        {/* Button */}
+                        <button
+                          className={`
+                          w-full py-3 rounded-xl font-semibold text-sm transition-all duration-300
+                          ${
+                            isCenter
+                              ? "bg-gradient-to-r from-blue-500 to-cyan-400 text-white hover:opacity-90"
+                              : "bg-white/10 text-white/80 hover:bg-white/20 hover:text-white"
+                          }
+                          ${
+                            isCenter && isAnimating
+                              ? "scale-105 shadow-lg shadow-blue-500/20"
+                              : ""
+                          }
+                        `}
+                        >
+                          {isCenter ? "Learn More →" : "View Details"}
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Glow Effect for Center Card */}
+                    {isCenter && (
+                      <div className="absolute inset-0 -z-10">
+                        <div
+                          className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${
+                            product.color
+                          } blur-xl transition-all duration-500 ${
+                            isAnimating ? "opacity-50" : "opacity-30"
+                          }`}
+                        />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Product Title */}
-          <h3
-            className={`font-bold mb-1 lg:mb-2 ${
-              isActive
-                ? (isMobile ? "text-lg" : isTablet ? "text-xl" : "text-2xl") +
-                  " text-[#b8c7e0]"
-                : (isMobile ? "text-base" : "text-lg") + " text-gray-300"
-            }`}
-          >
-            {product.title}
-          </h3>
-
-          {/* Product Description */}
-          <p
-            className={`mb-3 lg:mb-4 ${
-              isActive
-                ? (isMobile ? "text-xs" : "text-sm") +
-                  " text-gray-400 leading-relaxed flex-grow"
-                : (isMobile ? "text-xs" : "text-xs") +
-                  " text-gray-500 leading-relaxed flex-grow"
-            }`}
-          >
-            {isActive
-              ? isMobile
-                ? product.description.substring(0, 100) + "..."
-                : product.description
-              : product.description.substring(0, isMobile ? 60 : 80) + "..."}
-          </p>
-
-          {/* View More Button (only for active card) */}
-          {isActive && (
-            <div className="mt-auto pt-3 lg:pt-4 border-t border-gray-700/50">
-              <motion.a
-                href={`/products/${product.product_name}`}
-                whileHover={{ x: 5 }}
-                className="text-cyan-400 font-semibold transition-colors duration-300 inline-flex items-center justify-between w-full group/button text-sm lg:text-base"
+          {/* Indicators */}
+          {/* <div className="flex justify-center items-center gap-2 mt-12">
+            {productsData.products.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                disabled={isAnimating}
+                className={`
+                  relative h-2 rounded-full transition-all duration-300
+                  ${
+                    index === currentIndex
+                      ? "w-8 bg-gradient-to-r from-blue-500 to-cyan-400"
+                      : "w-2 bg-gray-600 hover:bg-gray-500"
+                  }
+                  disabled:opacity-50 disabled:cursor-not-allowed
+                `}
+                aria-label={`Go to slide ${index + 1}`}
               >
-                <span>Learn More</span>
-                <svg
-                  className={`${
-                    isMobile ? "w-4 h-4" : "w-5 h-5"
-                  } transition-transform group-hover/button:translate-x-2`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </motion.a>
-            </div>
-          )}
+                {index === currentIndex && isAnimating && (
+                  <div className="absolute inset-0 bg-white/30 rounded-full animate-ping" />
+                )}
+              </button>
+            ))}
+          </div> */}
         </div>
-
-        {/* Glow effect for active card */}
-        {isActive && (
-          <>
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl" />
-            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl blur-xl opacity-20" />
-          </>
-        )}
       </div>
-    </motion.div>
+    </section>
   );
 };
 
