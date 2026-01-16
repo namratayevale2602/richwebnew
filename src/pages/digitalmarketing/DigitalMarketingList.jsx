@@ -24,6 +24,18 @@ import {
 } from "lucide-react";
 import { useSEO } from "../../hooks/useSEO";
 
+import {
+  seoservice,
+  whatsappmarketing,
+  socialmediamarketing,
+  bulksmsmarketing,
+  ppcadvertising,
+  graphicdesigns,
+  contentmarkei,
+  videomarketing,
+  emailmarketing,
+} from "../../assets/index";
+
 // Import JSON data
 import marketingServicesData from "../../data/digitalMarketingData.json";
 
@@ -91,23 +103,15 @@ const DigitalMarketingList = () => {
 
   // Unsplash Images for Digital Marketing
   const unsplashImages = {
-    seo: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&crop=center",
-    "social-media-marketing":
-      "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=800&h=600&fit=crop&crop=center",
-    "ppc-advertising":
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center",
-    "content-marketing":
-      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop&crop=center",
-    "email-marketing":
-      "https://images.unsplash.com/photo-1589149098258-3e9102cd63d3?w=800&h=600&fit=crop&crop=center",
-    "whatsapp-marketing":
-      "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=800&h=600&fit=crop&crop=center",
-    "bulk-sms":
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop&crop=center",
-    "graphic-design":
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop&crop=center",
-    "video-marketing":
-      "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=600&fit=crop&crop=center",
+    seo: seoservice,
+    "social-media-marketing": socialmediamarketing,
+    "ppc-advertising": ppcadvertising,
+    "content-marketing": contentmarkei,
+    "email-marketing": emailmarketing,
+    "whatsapp-marketing": whatsappmarketing,
+    "bulk-sms": bulksmsmarketing,
+    "graphic-design": graphicdesigns,
+    "video-marketing": videomarketing,
   };
 
   // Marketing stats

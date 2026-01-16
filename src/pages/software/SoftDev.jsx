@@ -32,6 +32,16 @@ import { useSEO } from "../../hooks/useSEO";
 import { slugToSeoKeyMap } from "../../utils/seoMapping";
 // Import JSON data
 import servicesData from "../../data/softdev.json";
+import {
+  customsoftware,
+  ecommercesolu,
+  webdeve,
+  cloudsol,
+  mobileappdeve,
+  UiUx,
+  apiintegration,
+  maintenanceandsupport,
+} from "../../assets/index";
 
 // Technology icons mapping
 const techIcons = {
@@ -85,22 +95,14 @@ const benefitIcons = {
 
 // Unsplash Images
 const unsplashImages = {
-  "custom-software-development":
-    "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=600&fit=crop&crop=center",
-  "web-development":
-    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop&crop=center",
-  "mobile-app-development":
-    "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&h=600&fit=crop&crop=center",
-  "ui-ux-design":
-    "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=600&fit=crop&crop=center",
-  "ecommerce-solutions":
-    "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop&crop=center",
-  "cloud-solutions":
-    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=600&fit=crop&crop=center",
-  "api-integration":
-    "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=1200&h=600&fit=crop&crop=center",
-  "maintenance-support":
-    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=600&fit=crop&crop=center",
+  "custom-software-development": customsoftware,
+  "web-development": webdeve,
+  "mobile-app-development": mobileappdeve,
+  "ui-ux-design": UiUx,
+  "ecommerce-solutions": ecommercesolu,
+  "cloud-solutions": cloudsol,
+  "api-integration": apiintegration,
+  "maintenance-support": maintenanceandsupport,
 };
 
 const SoftDev = () => {
@@ -229,7 +231,6 @@ const SoftDev = () => {
                   alt={service.label}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
             </motion.div>
           </motion.div>

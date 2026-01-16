@@ -13,6 +13,21 @@ import {
   Mail,
   Building,
 } from "lucide-react";
+import {
+  alertsystems,
+  bulkemails,
+  bulksmss,
+  bulkvoicee,
+  designdevelopementt,
+  digitalautomationn,
+  graphicDesignn,
+  ivrr,
+  outdoormarketingg,
+  whatsappchatbots,
+  whatsappservices,
+  designmarketingg,
+  digitalmarketing,
+} from "./../../assets/index";
 import audioFile from "../../assets/sound/flipcard.mp3";
 
 const Products = () => {
@@ -108,12 +123,9 @@ const Products = () => {
         product_name: "bulk-sms",
         description:
           "Reliable bulk SMS services for marketing campaigns, alerts, and notifications. Reach thousands instantly with our robust SMS platform.",
-        image:
-          "https://images.unsplash.com/photo-1611605698323-b1e99cfd37ea?q=80&w=1374&auto=format&fit=crop",
+        image: digitalautomationn,
         icon: MessageSquare,
         category: "Communication",
-        color: "from-blue-500 to-cyan-400",
-        bgColor: "bg-gradient-to-br from-blue-500/20 to-cyan-400/20",
       },
       {
         id: 2,
@@ -121,12 +133,9 @@ const Products = () => {
         product_name: "bulk-voice",
         description:
           "Professional bulk voice messaging services for customer engagement, alerts, and marketing campaigns with high delivery rates.",
-        image:
-          "https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?q=80&w=1470&auto=format&fit=crop",
+        image: bulkvoicee,
         icon: Phone,
         category: "Communication",
-        color: "from-purple-500 to-pink-400",
-        bgColor: "bg-gradient-to-br from-purple-500/20 to-pink-400/20",
       },
       {
         id: 3,
@@ -134,12 +143,9 @@ const Products = () => {
         product_name: "whatsapp-services",
         description:
           "Official WhatsApp Business API services for marketing, customer support, and automated messaging with high engagement rates.",
-        image:
-          "https://images.unsplash.com/photo-1611605698335-8b1569810432?q=80&w=1374&auto=format&fit=crop",
+        image: whatsappservices,
         icon: Smartphone,
         category: "Communication",
-        color: "from-green-500 to-emerald-400",
-        bgColor: "bg-gradient-to-br from-green-500/20 to-emerald-400/20",
       },
       {
         id: 4,
@@ -147,12 +153,9 @@ const Products = () => {
         product_name: "digital-marketing",
         description:
           "Comprehensive digital marketing services including SEO, social media marketing, PPC, and content marketing to grow your business online.",
-        image:
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop",
+        image: digitalmarketing,
         icon: Megaphone,
         category: "Marketing",
-        color: "from-orange-500 to-red-400",
-        bgColor: "bg-gradient-to-br from-orange-500/20 to-red-400/20",
       },
       {
         id: 5,
@@ -160,12 +163,9 @@ const Products = () => {
         product_name: "whatsapp-chatbot",
         description:
           "Intelligent WhatsApp chatbots for customer service, lead generation, and automated conversations. 24/7 customer support solutions.",
-        image:
-          "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1469&auto=format&fit=crop",
+        image: whatsappchatbots,
         icon: Bot,
         category: "Automation",
-        color: "from-teal-500 to-cyan-400",
-        bgColor: "bg-gradient-to-br from-teal-500/20 to-cyan-400/20",
       },
       {
         id: 6,
@@ -173,12 +173,9 @@ const Products = () => {
         product_name: "digital-automation",
         description:
           "Advanced automation solutions for business processes, workflow optimization, and operational efficiency improvement.",
-        image:
-          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1374&auto=format&fit=crop",
+        image: digitalautomationn,
         icon: Zap,
         category: "Automation",
-        color: "from-indigo-500 to-purple-400",
-        bgColor: "bg-gradient-to-br from-indigo-500/20 to-purple-400/20",
       },
       {
         id: 7,
@@ -186,12 +183,9 @@ const Products = () => {
         product_name: "design-development",
         description:
           "Professional website design, web development, and mobile app development services to establish your strong digital presence.",
-        image:
-          "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1374&auto=format&fit=crop",
+        image: designdevelopementt,
         icon: Code,
         category: "Development",
-        color: "from-violet-500 to-purple-400",
-        bgColor: "bg-gradient-to-br from-violet-500/20 to-purple-400/20",
       },
       {
         id: 8,
@@ -199,12 +193,9 @@ const Products = () => {
         product_name: "graphic-design",
         description:
           "Professional graphic design services including logos, branding, marketing materials, and digital graphics for your business.",
-        image:
-          "https://images.unsplash.com/photo-1634942537034-2531766767d1?q=80&w=1528&auto=format&fit=crop",
+        image: graphicDesignn,
         icon: Palette,
         category: "Creative",
-        color: "from-pink-500 to-rose-400",
-        bgColor: "bg-gradient-to-br from-pink-500/20 to-rose-400/20",
       },
       {
         id: 9,
@@ -212,12 +203,9 @@ const Products = () => {
         product_name: "alert-system",
         description:
           "Custom alert and notification systems for businesses. Real-time alerts via SMS, voice, email, and push notifications.",
-        image:
-          "https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=1469&auto=format&fit=crop",
+        image: alertsystems,
         icon: AlertCircle,
         category: "Automation",
-        color: "from-amber-500 to-yellow-400",
-        bgColor: "bg-gradient-to-br from-amber-500/20 to-yellow-400/20",
       },
       {
         id: 10,
@@ -225,12 +213,9 @@ const Products = () => {
         product_name: "ivr-system",
         description:
           "Professional IVR system development for call centers and businesses. Automate customer interactions and improve call management.",
-        image:
-          "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1470&auto=format&fit=crop",
+        image: ivrr,
         icon: PhoneCall,
         category: "Communication",
-        color: "from-sky-500 to-blue-400",
-        bgColor: "bg-gradient-to-br from-sky-500/20 to-blue-400/20",
       },
       {
         id: 11,
@@ -238,12 +223,9 @@ const Products = () => {
         product_name: "bulk-email",
         description:
           "Professional bulk email marketing services for newsletters, promotions, and customer engagement campaigns with high deliverability rates.",
-        image:
-          "https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=1470&auto=format&fit=crop",
+        image: bulkemails,
         icon: Mail,
         category: "Marketing",
-        color: "from-red-500 to-orange-400",
-        bgColor: "bg-gradient-to-br from-red-500/20 to-orange-400/20",
       },
       {
         id: 12,
@@ -251,12 +233,9 @@ const Products = () => {
         product_name: "outdoor-marketing",
         description:
           "Comprehensive outdoor marketing services including hoardings, billboards, transit ads, and OOH advertising for maximum brand visibility.",
-        image:
-          "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=1525&auto=format&fit=crop",
+        image: outdoormarketingg,
         icon: Building,
         category: "Marketing",
-        color: "from-gray-600 to-gray-400",
-        bgColor: "bg-gradient-to-br from-gray-600/20 to-gray-400/20",
       },
     ],
   };
@@ -566,23 +545,16 @@ const Products = () => {
                     `}
                     >
                       {/* Gradient Background */}
-                      <div className={`absolute inset-0 ${product.bgColor}`} />
+                      <div className={`absolute inset-0`} />
 
                       {/* Image */}
                       <div className="relative h-1/2 overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
+                        <div className="absolute inset-0 z-10" />
                         <img
                           src={product.image}
                           alt={product.title}
                           className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                          onError={(e) => {
-                            e.target.src = `https://source.unsplash.com/random/800x600/?${product.category}`;
-                          }}
                         />
-                        {/* Animation overlay during transition */}
-                        {isCenter && isAnimating && (
-                          <div className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent animate-pulse" />
-                        )}
                       </div>
 
                       {/* Content */}
@@ -657,19 +629,6 @@ const Products = () => {
                         </button>
                       </div>
                     </div>
-
-                    {/* Glow Effect for Center Card */}
-                    {isCenter && (
-                      <div className="absolute inset-0 -z-10">
-                        <div
-                          className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${
-                            product.color
-                          } blur-xl transition-all duration-500 ${
-                            isAnimating ? "opacity-50" : "opacity-30"
-                          }`}
-                        />
-                      </div>
-                    )}
                   </div>
                 );
               })}

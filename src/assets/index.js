@@ -75,6 +75,45 @@ import img12 from "./productsimg/12.png";
 import pramotionalSMS from "./productsimg/pramotionalSMS.png";
 import transactionalSMS from "./productsimg/transactionalSMS.png";
 
+// Services we offer
+import softwareandItsolu from "./services/softwareandItsolu.jpg";
+import seo from "./services/seo.jpg";
+import designanddevelop from "./services/designanddevelop.jpg";
+import contentmarketing from "./services/contentmarketing.jpg";
+import performancemarketing from "./services/performancemarketing.jpg";
+import socialmdia from "./services/socialmdia.jpg";
+
+// software and IT
+import customsoftware from "./services/customsoftware.jpg";
+import ecommercesolu from "./services/ecommercesolu.jpg";
+import webdeve from "./services/webdeve.jpg";
+import cloudsol from "./services/cloudsol.jpg";
+import apiintegration from "./services/apiintegration.PNG";
+import mobileappdeve from "./services/mobileappdeve.PNG";
+import UiUx from "./services/UiUx.PNG";
+import maintenanceandsupport from "./services/maintenanceandsupport.PNG";
+
+// digital marketing
+import seoservice from "./services/seoservice.PNG";
+import whatsappmarketing from "./services/whatsappmarketing.PNG";
+import socialmediamarketing from "./services/socialmediamarketing.PNG";
+import bulksmsmarketing from "./services/bulksmsmarketing.PNG";
+import ppcadvertising from "./services/ppcadvertising.PNG";
+import graphicdesigns from "./services/graphicdesign.PNG";
+import contentmarkei from "./services/contentmarkei.PNG";
+import videomarketing from "./services/videomarketing.PNG";
+import emailmarketing from "./services/emailmarketing.PNG";
+
+// career page image
+import careerpage from "./careerpage/career.PNG";
+
+// about us images
+import aboutus from "./aboutus/aboutus.PNG";
+import whoweare from "./aboutus/whoweare.PNG";
+import ourvision from "./aboutus/ourvision.PNG";
+import ourmission from "./aboutus/ourmission.PNG";
+import whatwedo from "./aboutus/whatwedo.PNG";
+
 export {
   Richlogo,
   footerLogo,
@@ -150,4 +189,43 @@ export {
   img12,
   pramotionalSMS,
   transactionalSMS,
+
+  // Services we offer
+  softwareandItsolu,
+  socialmdia,
+  seo,
+  designanddevelop,
+  contentmarketing,
+  performancemarketing,
+
+  // software and IT
+  customsoftware,
+  ecommercesolu,
+  webdeve,
+  cloudsol,
+  mobileappdeve,
+  UiUx,
+  maintenanceandsupport,
+  apiintegration,
+
+  // digital marketing
+  seoservice,
+  whatsappmarketing,
+  socialmediamarketing,
+  bulksmsmarketing,
+  ppcadvertising,
+  graphicdesigns,
+  contentmarkei,
+  videomarketing,
+  emailmarketing,
+
+  // career page image
+  careerpage,
+
+  // about us images
+  aboutus,
+  whoweare,
+  ourmission,
+  ourvision,
+  whatwedo,
 };

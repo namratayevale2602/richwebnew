@@ -25,6 +25,17 @@ import {
 } from "lucide-react";
 import { useSEO } from "../../hooks/useSEO";
 
+import {
+  customsoftware,
+  ecommercesolu,
+  webdeve,
+  cloudsol,
+  mobileappdeve,
+  UiUx,
+  apiintegration,
+  maintenanceandsupport,
+} from "../../assets/index";
+
 // Import JSON data
 import softwareServicesData from "../../data/softdev.json";
 
@@ -84,22 +95,14 @@ const SoftDevList = () => {
 
   // Unsplash Images for Software Services
   const unsplashImages = {
-    "custom-software-development":
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop&crop=center",
-    "web-development":
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center",
-    "mobile-app-development":
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop&crop=center",
-    "ui-ux-design":
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop&crop=center",
-    "ecommerce-solutions":
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center",
-    "cloud-solutions":
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&crop=center",
-    "api-integration":
-      "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&h=600&fit=crop&crop=center",
-    "maintenance-support":
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop&crop=center",
+    "custom-software-development": customsoftware,
+    "web-development": webdeve,
+    "mobile-app-development": mobileappdeve,
+    "ui-ux-design": UiUx,
+    "ecommerce-solutions": ecommercesolu,
+    "cloud-solutions": cloudsol,
+    "api-integration": apiintegration,
+    "maintenance-support": maintenanceandsupport,
   };
 
   // Stats data

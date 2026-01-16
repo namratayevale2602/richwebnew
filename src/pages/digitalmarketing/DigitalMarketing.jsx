@@ -34,6 +34,17 @@ import {
 } from "lucide-react";
 import { useSEO } from "../../hooks/useSEO";
 import { slugToSeoKeyMap } from "../../utils/seoMapping";
+import {
+  seoservice,
+  whatsappmarketing,
+  socialmediamarketing,
+  bulksmsmarketing,
+  ppcadvertising,
+  graphicdesigns,
+  contentmarkei,
+  videomarketing,
+  emailmarketing,
+} from "../../assets/index";
 
 // Import JSON data
 import servicesData from "../../data/digitalMarketingData.json";
@@ -63,23 +74,15 @@ const benefitIcons = {
 
 // Unsplash Images for Digital Marketing
 const unsplashImages = {
-  seo: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop&crop=center",
-  "social-media-marketing":
-    "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=600&fit=crop&crop=center",
-  "ppc-advertising":
-    "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=600&fit=crop&crop=center",
-  "content-marketing":
-    "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=600&fit=crop&crop=center",
-  "email-marketing":
-    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=600&fit=crop&crop=center",
-  "whatsapp-marketing":
-    "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=1200&h=600&fit=crop&crop=center",
-  "bulk-sms":
-    "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=600&fit=crop&crop=center",
-  "graphic-design":
-    "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=600&fit=crop&crop=center",
-  "video-marketing":
-    "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=1200&h=600&fit=crop&crop=center",
+  seo: seoservice,
+  "social-media-marketing": socialmediamarketing,
+  "ppc-advertising": ppcadvertising,
+  "content-marketing": contentmarkei,
+  "email-marketing": emailmarketing,
+  "whatsapp-marketing": whatsappmarketing,
+  "bulk-sms": bulksmsmarketing,
+  "graphic-design": graphicdesigns,
+  "video-marketing": videomarketing,
 };
 
 const DigitalMarketing = () => {
@@ -128,14 +131,6 @@ const DigitalMarketing = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [slug]);
 
-  // Default image if service slug not found
-  const getServiceImage = (slugKey) => {
-    return (
-      unsplashImages[slugKey] ||
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop&crop=center"
-    );
-  };
-
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-white">
@@ -169,7 +164,6 @@ const DigitalMarketing = () => {
   }
 
   const imageKey = slug.split("-").pop();
-  const serviceImage = getServiceImage(imageKey);
 
   return (
     <div className="min-h-screen">
@@ -228,11 +222,12 @@ const DigitalMarketing = () => {
             >
               <div className="relative h-64 md:h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src={serviceImage}
+                  src={
+                    unsplashImages[slug] || unsplashImages["web-development"]
+                  }
                   alt={service.label}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
             </motion.div>
           </motion.div>

@@ -28,6 +28,12 @@ import {
   ivrsystem,
   bulkemail,
   outdoormarketing,
+  softwareandItsolu,
+  socialmdia,
+  seo,
+  designanddevelop,
+  contentmarketing,
+  performancemarketing,
 } from "../../assets";
 
 const ServicesWeOffer = () => {
@@ -47,8 +53,7 @@ const ServicesWeOffer = () => {
         ["WhatsApp API Integration", "Dynamic QR Code & Smart Link Generation"],
       ],
       icons: [designdevelopment, digitalautomation, whatsappservice],
-      image:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop",
+      image: softwareandItsolu,
       gradient: "from-blue-600 to-purple-700",
       icon: <Code className="w-6 h-6" />,
       description:
@@ -69,8 +74,7 @@ const ServicesWeOffer = () => {
         ["Podcast, Reel Shoot & Product Photography", ""],
       ],
       icons: [bulksms, bulkvoice, whatsappchatbot, digitalmarketing],
-      image:
-        "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=500&h=300&fit=crop",
+      image: socialmdia,
       gradient: "from-pink-500 to-rose-600",
       icon: <Megaphone className="w-6 h-6" />,
       description: "Boost your brand presence across social media platforms",
@@ -85,8 +89,7 @@ const ServicesWeOffer = () => {
         ["International SEO", "Managed SEO Services"],
       ],
       icons: [digitalmarketing, alertsystem],
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
+      image: seo,
       gradient: "from-green-500 to-emerald-600",
       icon: <BarChart className="w-6 h-6" />,
       description:
@@ -102,8 +105,7 @@ const ServicesWeOffer = () => {
         ["Enterprise Solutions", "Website Design"],
       ],
       icons: [designdevelopment, graphicdesign, outdoormarketing],
-      image:
-        "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=500&h=300&fit=crop",
+      image: designanddevelop,
       gradient: "from-orange-500 to-red-600",
       icon: <PenTool className="w-6 h-6" />,
       description: "Creative design and robust development solutions",
@@ -117,8 +119,7 @@ const ServicesWeOffer = () => {
         ["Content Optimization", "Content Promotion"],
       ],
       icons: [digitalmarketing, bulkemail],
-      image:
-        "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=500&h=300&fit=crop",
+      image: contentmarketing,
       gradient: "from-indigo-500 to-blue-600",
       icon: <Layers className="w-6 h-6" />,
       description: "Engage your audience with strategic content solutions",
@@ -133,8 +134,7 @@ const ServicesWeOffer = () => {
         ["Amazon Advertising", "YouTube Advertising"],
       ],
       icons: [digitalmarketing, ivrsystem],
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=300&fit=crop",
+      image: performancemarketing,
       gradient: "from-purple-500 to-indigo-600",
       icon: <Target className="w-6 h-6" />,
       description: "Data-driven marketing strategies for measurable results",
@@ -275,7 +275,7 @@ const ServicesWeOffer = () => {
                     <img
                       src={services[activeService].image}
                       alt={services[activeService].title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import { whoweare, ourmission, ourvision, whatwedo } from "../../assets/index";
 
 const AboutKey = () => {
   const [aboutData] = useState([
     {
       type: "About",
-      img: "/images/about-us.jpg",
+      img: whoweare,
       title: "Who We Are",
       subtitle: "Our Story",
       description:
@@ -12,7 +13,7 @@ const AboutKey = () => {
     },
     {
       type: "Vision",
-      img: "/images/vision.jpg",
+      img: ourvision,
       title: "Our Vision",
       subtitle: "",
       description:
@@ -20,7 +21,7 @@ const AboutKey = () => {
     },
     {
       type: "Mission",
-      img: "/images/mission.jpg",
+      img: ourmission,
       title: "Our Mission",
       subtitle: "",
       description:
@@ -28,7 +29,7 @@ const AboutKey = () => {
     },
     {
       type: "Offer",
-      img: "/images/what-we-do.jpg",
+      img: whatwedo,
       title: "What We Do",
       subtitle: "Our Services",
       description:

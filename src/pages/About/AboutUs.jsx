@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { aboutus } from "../../assets/index";
 
 const AboutUs = () => {
   useEffect(() => {
@@ -57,14 +58,11 @@ const AboutUs = () => {
               <div className="relative">
                 <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                    src="/images/about-us.jpg"
+                    src={aboutus}
                     alt="Rich System Solution Team"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                {/* Decorative Elements */}
-                <div className="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-full -z-10"></div>
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-50 rounded-full -z-10"></div>
               </div>
             </div>
           </div>

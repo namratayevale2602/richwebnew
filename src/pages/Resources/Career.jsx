@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaSuitcase } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
+import { careerpage } from "../../assets/index";
 
 // Dummy data
 const dummyCareerData = {
@@ -145,11 +146,7 @@ const Career = () => {
         <div className="px-4 sm:px-10 flex flex-col sm:flex-row justify-between items-center gap-10 w-full">
           <div className="w-full sm:w-1/2">
             <img
-              src={
-                intro[0]?.image
-                  ? `https://picsum.photos/400/250?random=1`
-                  : "/placeholder-image.jpg"
-              }
+              src={careerpage}
               width={400}
               height={250}
               alt="career"
